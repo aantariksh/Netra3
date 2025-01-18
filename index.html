@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <title>Netra3</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Netra3">
+    <meta name="keywords" content="bootstrap, business, creative agency, mobile app showcase, saas, fintech, finance, online courses, software, medical, conference landing, services, e-commerce, shopping cart, multipurpose, shop, ui kit, marketing, seo, landing, blog, portfolio, html5, css3, javascript, gallery, slider, touch, creative">
+    <meta name="author" content="Aantariksh Developers">
+
+    <!-- Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Theme switcher (color modes) -->
+    <script src="assets/js/theme-switcher.js"></script>
+
+    <!-- Favicon and Touch Icons -->
+    <link rel="icon" type="image/png"  href="./logo.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Vendor Styles -->
+    <link rel="stylesheet" media="screen" href="assets/vendor/boxicons/css/boxicons.min.css">
+    <link rel="stylesheet" media="screen" href="assets/vendor/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" media="screen" href="assets/vendor/lightgallery/css/lightgallery-bundle.min.css">
+
+    <!-- Main Theme Styles + Bootstrap -->
+    <link rel="stylesheet" media="screen" href="assets/css/theme.min.css">
+
+    <!-- Page loading styles -->
+    <style>
+      .page-loading {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        -webkit-transition: all .4s .2s ease-in-out;
+        transition: all .4s .2s ease-in-out;
+        background-color: #fff;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 9999;
+      }
+      [data-bs-theme="dark"] .page-loading {
+        background-color: #0b0f19;
+      }
+      .page-loading.active {
+        opacity: 1;
+        visibility: visible;
+      }
+      .page-loading-inner {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        -webkit-transition: opacity .2s ease-in-out;
+        transition: opacity .2s ease-in-out;
+        opacity: 0;
+      }
+      .page-loading.active > .page-loading-inner {
+        opacity: 1;
+      }
+      .page-loading-inner > span {
+        display: block;
+        font-size: 1rem;
+        font-weight: normal;
+        color: #9397ad;
+      }
+      [data-bs-theme="dark"] .page-loading-inner > span {
+        color: #fff;
+        opacity: .6;
+      }
+      .page-spinner {
+        display: inline-block;
+        width: 2.75rem;
+        height: 2.75rem;
+        margin-bottom: .75rem;
+        vertical-align: text-bottom;
+        border: .15em solid #b4b7c9;
+        border-right-color: transparent;
+        border-radius: 50%;
+        -webkit-animation: spinner .75s linear infinite;
+        animation: spinner .75s linear infinite;
+      }
+      [data-bs-theme="dark"] .page-spinner {
+        border-color: rgba(255,255,255,.4);
+        border-right-color: transparent;
+      }
+      @-webkit-keyframes spinner {
+        100% {
+          -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+      @keyframes spinner {
+        100% {
+          -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+
+      /* Video styles */
+      .video-container {
+        width: 100%; /* Make the container width relative */
+        max-width: 600px; /* Maintain maximum width for larger screens */
+        aspect-ratio: 4 / 3; /* Maintain rectangle shape with 4:3 aspect ratio */
+        overflow: hidden; /* Hide anything outside the rectangle */
+        position: relative;
+        margin: 50px auto; /* Center horizontally */
+        border: 4px solid #00C9FF; /* Optional: Add a border */
+        border-radius: 8%; /* Rounded corners */
+      }
+
+      .video-container video {
+        position: absolute;
+        top: 50%; /* Center video vertically */
+        left: 50%; /* Center video horizontally */
+        transform: translate(-50%, -50%) scale(0.7); /* Adjust positioning to center */
+        min-width: 100%; /* Ensure video covers the container */
+        min-height: 100%; /* Ensure video covers the container */
+        object-fit: cover; /* Crop video to fill container while maintaining aspect ratio */
+      }
+
+      /* Adjustments for smaller screens */
+      @media (max-width: 768px) {
+        .video-container video {
+          transform: translate(-50%, -50%) scale(0.65); /* Slightly less zoom-out for smaller screens */
+        }
+      }      
+    </style>
+
+    <!-- Page loading scripts -->
+    <script>
+      (function () {
+        window.onload = function () {
+          const preloader = document.querySelector('.page-loading');
+          preloader.classList.remove('active');
+          setTimeout(function () {
+            preloader.remove();
+          }, 1000);
+        };
+      })();
+    </script>
+  </head>
+
+
+  <!-- Body -->
+  <body>
+
+    <!-- Page loading spinner -->
+    <div class="page-loading active">
+      <div class="page-loading-inner">
+        <div class="page-spinner"></div><span>Loading...</span>
+      </div>
+    </div>
+
+
+    <!-- Page wrapper for sticky footer -->
+    <!-- Wraps everything except footer to push footer to the bottom of the page if there is little content -->
+    <main class="page-wrapper">
+
+
+      <!-- Navbar -->
+      <!-- Remove "navbar-sticky" class to make navigation bar scrollable with the page -->
+      <header class="header navbar navbar-expand-lg navbar-dark position-absolute navbar-sticky">
+        <div class="container px-3">
+          <a href="index.html" class="navbar-brand pe-3">
+            <img src="./logo.png" width="47" alt="Netra 3">
+            NETRA3
+          </a>
+          <div id="navbarNav" class="offcanvas offcanvas-end bg-dark">
+            <div class="offcanvas-header border-bottom border-light">
+              <h5 class="offcanvas-title text-white">Menu</h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a href="docs/getting-started.html" class="nav-link active">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a href="about.html" class="nav-link">About Us</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Solutions</a>
+                  <ul class="dropdown-menu dropdown-menu-dark">
+                    <li><a href="account-notifications.html" class="dropdown-item">Anomaly Detection and Behavior Recognition</a></li>
+                    <li><a href="account-notifications.html" class="dropdown-item">Theft Detection</a></li>
+                    <li><a href="account-notifications.html" class="dropdown-item">Smoke & Fire Detection</a></li>
+                    <li><a href="account-notifications.html" class="dropdown-item">Gun Detection System</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item dropdown">
+                  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Sectors</a>
+                  <ul class="dropdown-menu dropdown-menu-dark">
+                    <li><a href="account-details.html" class="dropdown-item">Retail Stores</a></li>
+                    <li><a href="account-security.html" class="dropdown-item">Convenience Stores</a></li>
+                    <li><a href="account-notifications.html" class="dropdown-item">Liquor Store</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a href="docs/getting-started.html" class="nav-link">Tech Blogs</a>
+                </li>
+                <li class="nav-item">
+                  <a href="components/typography.html" class="nav-link text-nowrap">Collaborate With Us</a>
+                </li>
+              </ul>
+            </div>
+            <div class="offcanvas-header border-top border-light">
+              <a href="contact_us.html" class="btn btn-primary w-100">
+                <i class="bx bx-cart fs-4 lh-1 me-1"></i>
+                &nbsp;Contact Us
+              </a>
+            </div>      
+          </div>
+          <button type="button" class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <a href="contact_us.html" class="btn btn-primary bg-gradient-primary border-0 rounded-pill d-none d-lg-inline-flex">
+            <i class="bx bx-phone fs-5 lh-1 me-1"></i>
+            &nbsp;Contact Us
+          </a>
+        </div>
+      </header>
+
+
+      <!-- Hero section -->
+      <section class="position-relative bg-dark pt-lg-4 pt-xl-5" style="background: linear-gradient(90deg, #0B0F19 0%, #172033 51.04%, #0B0F19 100%);">
+        <div class="jarallax position-absolute top-0 start-0 w-100 h-100" data-jarallax data-speed="0.4">
+          <div class="jarallax-img" style="background-image: url(assets/img/landing/saas-5/hero-bg-pattern.png);"></div>
+        </div>
+        <div class="container position-relative zindex-2 pt-2 pt-sm-4 pt-md-5">
+          <div class="row justify-content-center pt-3">
+            <div class="col-lg-9 col-xl-8 text-center pt-5 mt-1">
+              <h1 class="display-4 text-white pt-3 mt-3 mb-4">Detect Thefts Instantly 24/7, <span class="text-gradient-primary">Act Swiftly</span></h1>
+              <p class="text-white opacity-70 fs-xl">Detect thefts, prevent violence, and boost productivity effortlessly. Netra3 brings the power of AI to safeguard your business and optimize operations.</p>
+            </div>
+          </div>
+        </div>
+        <div class="d-none d-lg-block" style="height: 480px;"></div>
+        <div class="d-lg-none" style="height: 400px;"></div>
+        <div class="d-flex position-absolute bottom-0 start-0 w-100 overflow-hidden mb-n1" style="color: var(--si-body-bg);">
+          <div class="position-relative start-50 translate-middle-x flex-shrink-0" style="width: 3774px;">
+            <svg width="3774" height="201" viewBox="0 0 3774 201" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 200.003C0 200.003 1137.52 0.188224 1873.5 0.000134392C2614.84 -0.189325 3774 200.003 3774 200.003H0Z" fill="currentColor"/></svg>
+          </div>
+        </div>
+      </section>
+
+      <!-- Categories (Slider) -->
+      <section class="container position-relative zindex-3">
+        <div class="d-none d-lg-block" style="margin-top: -428px;"></div>
+        <div class=" d-lg-none" style="margin-top: -370px;"></div>
+        <div class="swiper" data-swiper-options='{
+          "slidesPerView": 1,
+          "spaceBetween": 24,
+          "pagination": {
+            "el": ".swiper-pagination",
+            "clickable": true
+          },
+          "breakpoints": {
+            "560": {
+              "slidesPerView": 2
+            },
+            "960": {
+              "slidesPerView": 3
+            }
+          }
+        }'>
+          <div class="swiper-wrapper">
+
+            <!-- Item -->
+            <div class="swiper-slide">
+              <a href="#" class="card-portfolio position-relative d-block rounded-3 overflow-hidden">
+                <span class="position-absolute top-0 start-0 w-100 h-100 zindex-1" style="background: linear-gradient(180deg, rgba(17, 24, 39, 0.00) 35.56%, #111827 95.3%);"></span>
+                <div class="position-absolute bottom-0 w-100 zindex-2 p-4">
+                  <div class="px-md-3">
+                    <h3 class="h4 text-white mb-0">Retail Stores</h3>
+                    <div class="card-portfolio-meta d-flex align-items-center justify-content-between">
+                      <span class="text-white fs-xs text-truncate opacity-70 pe-3">Order processing, price suggestions, user research</span>
+                      <i class="bx bx-right-arrow-circle fs-3 text-gradient-primary"></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-img">
+                  <img src="./assets/img/categories/retail.jpg" alt="Ecommerce">
+                </div>
+              </a>
+            </div>
+
+            <!-- Item -->
+            <div class="swiper-slide">
+              <a href="#" class="card-portfolio position-relative d-block rounded-3 overflow-hidden">
+                <span class="position-absolute top-0 start-0 w-100 h-100 zindex-1" style="background: linear-gradient(180deg, rgba(17, 24, 39, 0.00) 35.56%, #111827 95.3%);"></span>
+                <div class="position-absolute bottom-0 w-100 zindex-2 p-4">
+                  <div class="px-md-3">
+                    <h3 class="h4 text-white mb-0">Liquor Stores</h3>
+                    <div class="card-portfolio-meta d-flex align-items-center justify-content-between">
+                      <span class="text-white fs-xs text-truncate opacity-70 pe-3">Itinerary planning, freight pricing culculations, etc.</span>
+                      <i class="bx bx-right-arrow-circle fs-3 text-gradient-primary"></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-img">
+                  <img src="./assets/img/categories/liquor.jpg" alt="Transportation">
+                </div>
+              </a>
+            </div>
+
+            <!-- Item -->
+            <div class="swiper-slide">
+              <a href="#" class="card-portfolio position-relative d-block rounded-3 overflow-hidden">
+                <span class="position-absolute top-0 start-0 w-100 h-100 zindex-1" style="background: linear-gradient(180deg, rgba(17, 24, 39, 0.00) 35.56%, #111827 95.3%);"></span>
+                <div class="position-absolute bottom-0 w-100 zindex-2 p-4">
+                  <div class="px-md-3">
+                    <h3 class="h4 text-white mb-0">Gas Stations</h3>
+                    <div class="card-portfolio-meta d-flex align-items-center justify-content-between">
+                      <span class="text-white fs-xs text-truncate opacity-70 pe-3">Market research, data visualization, user testing</span>
+                      <i class="bx bx-right-arrow-circle fs-3 text-gradient-primary"></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-img">
+                  <img src="./assets/img/categories/gas.jpg" alt="Marketing">
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Pagination (bullets) -->
+          <div class="swiper-pagination position-relative bottom-0 pt-2 pt-md-3 mt-4"></div>
+        </div>
+      </section>
+
+      <!-- Brands (carousel on screens < 1100px) -->
+      <section class="container py-5 mt-md-2 mt-lg-4">
+        <div class="swiper pt-2 mx-n2" data-swiper-options='{
+          "slidesPerView": 2,
+          "pagination": {
+            "el": ".swiper-pagination",
+            "clickable": true
+          },
+          "breakpoints": {
+            "500": {
+              "slidesPerView": 3,
+              "spaceBetween": 8
+            },
+            "650": {
+              "slidesPerView": 4,
+              "spaceBetween": 8
+            },
+            "900": {
+              "slidesPerView": 5,
+              "spaceBetween": 8
+            },
+            "1100": {
+              "slidesPerView": 6,
+              "spaceBetween": 8
+            }
+          }
+        }'>
+          <div class="swiper-wrapper">
+
+            <!-- Item -->
+            <div class="swiper-slide py-3">
+              <a href="#" class="card card-body card-hover px-2 mx-2">
+                <img src="assets/img/brands/01.svg" class="d-block mx-auto my-2" width="154" alt="Brand">
+              </a>
+            </div>
+
+            <!-- Item -->
+            <div class="swiper-slide py-3">
+              <a href="#" class="card card-body card-hover px-2 mx-2">
+                <img src="assets/img/brands/02.svg" class="d-block mx-auto my-2" width="154" alt="Brand">
+              </a>
+            </div>
+
+            <!-- Item -->
+            <div class="swiper-slide py-3">
+              <a href="#" class="card card-body card-hover px-2 mx-2">
+                <img src="assets/img/brands/03.svg" class="d-block mx-auto my-2" width="154" alt="Brand">
+              </a>
+            </div>
+
+            <!-- Item -->
+            <div class="swiper-slide py-3">
+              <a href="#" class="card card-body card-hover px-2 mx-2">
+                <img src="assets/img/brands/04.svg" class="d-block mx-auto my-2" width="154" alt="Brand">
+              </a>
+            </div>
+
+            <!-- Item -->
+            <div class="swiper-slide py-3">
+              <a href="#" class="card card-body card-hover px-2 mx-2">
+                <img src="assets/img/brands/05.svg" class="d-block mx-auto my-2" width="154" alt="Brand">
+              </a>
+            </div>
+
+            <!-- Item -->
+            <div class="swiper-slide py-3">
+              <a href="#" class="card card-body card-hover px-2 mx-2">
+                <img src="assets/img/brands/06.svg" class="d-block mx-auto my-2" width="154" alt="Brand">
+              </a>
+            </div>
+          </div>
+
+          <!-- Pagination (bullets) -->
+          <div class="swiper-pagination position-relative pt-2 mt-4"></div>
+        </div>
+      </section>
+
+      <!-- Features -->
+      <section class="position-relative py-5">
+        <div class="container position-relative zindex-5 pb-md-4 pt-md-2 pt-lg-3 pb-lg-5">
+          <div class="row justify-content-center text-center pb-3 mb-sm-2 mb-lg-3">
+            <div class="col-xl-6 col-lg-7 col-md-9">
+              <h2 class="h1 mb-lg-4">What Do You Get with Netra3?</h2>
+              <p class="fs-lg text-muted mb-0">Unparalleled Features to Secure and Optimize Your Store.</p>
+            </div>
+          </div>
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-0 pb-xl-3">
+
+            <!-- Item -->
+            <div class="col position-relative">
+              <div class="card border-0 bg-transparent rounded-0 p-md-1 p-xl-3">
+                <div class="d-table bg-secondary rounded-3 p-3 mx-auto mt-3 mt-md-4">
+                  <img src="assets/img/landing/saas-2/features/security.svg" width="40" alt="Security">
+                </div>
+                <div class="card-body text-center">
+                  <h3 class="h5 pb-1 mb-2">Theft Detection</h3>
+                  <p class="mb-0">Our AI-powered system ensures you're always a step ahead improving store security.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item -->
+            <div class="col position-relative">
+              <div class="card border-0 bg-transparent rounded-0 p-md-1 p-xl-3">
+                <div class="d-table bg-secondary rounded-3 p-3 mx-auto mt-3 mt-md-4">
+                  <img src="assets/img/landing/saas-2/features/notifications.svg" width="40" alt="Notifications">
+                </div>
+                <div class="card-body text-center">
+                  <h3 class="h5 pb-1 mb-2">Notifications</h3>
+                  <p class="mb-0">Catch thefts as they happen with instant alerts and actionable insights.</p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Item -->
+            <div class="col position-relative">
+              <div class="card border-0 bg-transparent rounded-0 p-md-1 p-xl-3">
+                <div class="d-table bg-secondary rounded-3 p-3 mx-auto mt-3 mt-md-4">
+                  <img src="assets/img/landing/saas-2/features/tasks.svg" width="40" alt="Tasks">
+                </div>
+                <div class="card-body text-center">
+                  <h3 class="h5 pb-1 mb-2">Sections &amp; Subtasks</h3>
+                  <p class="mb-0">Detect Smoke, Fire or Firearms in real time with advanced AI technology.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Item -->
+            <div class="col position-relative">
+              <div class="card border-0 bg-transparent rounded-0 p-md-1 p-xl-3">
+                <div class="d-table bg-secondary rounded-3 p-3 mx-auto mt-3 mt-md-4">
+                  <img src="assets/img/landing/saas-2/features/analytics.svg" width="40" alt="Analytics">
+                </div>
+                <div class="card-body text-center">
+                  <h3 class="h5 pb-1 mb-2">Tasks Analytics</h3>
+                  <p class="mb-0">Generate detailed reports to improve your store's security and efficiency.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="position-absolute top-0 start-0 w-100 h-100" style="background-color: rgba(255,255,255,.05);"></div>
+      </section>      
+
+      <!-- Video -->
+      <section class="position-relative py-5">
+        <span class="position-absolute top-0 start-0 w-100 h-100 d-dark-mode-none" style="background: linear-gradient(360deg, #fff 5.39%, #f3f6ff 78.66%);"></span>
+        <span class="position-absolute top-0 start-0 w-100 h-100 d-none d-dark-mode-block" style="background: linear-gradient(360deg, #0b0f19 5.39%, rgba(255, 255, 255, .04) 78.66%);"></span>
+        <div class="container position-relative zindex-2 py-2 py-sm-3 py-sm-4">
+          <div class="row align-items-center py-lg-2 py-xl-3 my-xl-1 my-xxl-3">
+            <div class="col-md-5 col-xl-4">
+              <h2 class="h1 pb-2 pb-sm-3 mb-md-0">Learn <span class="text-gradient-primary">how Netra 3 works</span> in a nutshell.</h2>
+              <p>
+                Discover the power of AI-driven surveillance in just a few steps. Netra3 integrates seamlessly into your store, monitors activities in real time, and delivers instant alerts and actionable insights. 
+                <br><br>
+                From theft detection to staff productivity tracking, it's your all-in-one solution for a safer, smarter retail experience.
+              </p>
+            </div>
+            <div class="col-md-7 offset-xl-1">
+              <div class="position-relative video-container">
+                <video autoplay="" loop="" muted="" src="./assets/img/video/video.mp4" playsinline=""></video>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container">
+          <!-- Steps -->
+          <div class="steps steps-sm steps-horizontal-md steps-center pb-5 mb-md-2 mb-lg-3">
+            <div class="step">
+              <div class="step-number">
+                <div class="step-number-inner">1</div>
+              </div>
+              <div class="step-body">
+                <h3 class="h4 mb-3">Assessment</h3>
+                <p class="mb-0">Our experts analyze and understand your store's unique needs.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-number">
+                <div class="step-number-inner">2</div>
+              </div>
+              <div class="step-body">
+                <h3 class="h4 mb-3">Installation</h3>
+                <p class="mb-0">We deploy AI-powered cameras compatibile with your current systems.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-number">
+                <div class="step-number-inner">3</div>
+              </div>
+              <div class="step-body">
+                <h3 class="h4 mb-3">Configuration</h3>
+                <p class="mb-0">Fine-tune the AI algorithms for your store environment.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-number">
+                <div class="step-number-inner">4</div>
+              </div>
+              <div class="step-body">
+                <h3 class="h4 mb-3">Monitoring</h3>
+                <p class="mb-0">Stay protected with continuous improvements.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Case studies -->
+      <section class="bg-secondary mt-md-2 mt-lg-4">
+        <div class="position-relative py-lg-4 py-xl-5">
+
+          <!-- Swiper tabs -->
+          <div class="swiper-tabs position-absolute top-0 start-0 w-100 h-100">
+            <div id="image-1" class="jarallax position-absolute top-0 start-0 w-100 h-100 swiper-tab active" data-jarallax data-speed="0.4">
+              <span class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-35"></span>
+              <div class="jarallax-img" style="background-image: url(./assets/img/landing/saas-5/video-cover-light.jpg);        
+                background-position: center bottom; /* Positioning the image */
+                background-size: cover; /* Ensures the image covers the container */
+                margin-top: 200px; /* Adjust the top space to start lower */"></div>
+            </div>
+          </div>
+
+          <!-- Swiper slider -->
+          <div class="container position-relative zindex-5 py-5">
+            <div class="row py-2 py-md-3">
+              <div class="col-xl-5 col-lg-7 col-md-9">
+
+                <!-- Card -->
+                <div class="card bg-white shadow-sm p-3">
+                  <div class="card-body">
+                    <div class="swiper" data-swiper-options='{
+                      "spaceBetween": 30,
+                      "loop": true,
+                      "tabs": true,
+                      "pagination": {
+                        "el": "#case-study-pagination",
+                        "clickable": true
+                      },
+                      "navigation": {
+                        "prevEl": "#case-study-prev",
+                        "nextEl": "#case-study-next"
+                      }
+                    }'>
+                      <div class="swiper-wrapper">
+                        <!-- Item -->
+                        <div class="swiper-slide" data-swiper-tab="#image-1">
+                          <h3 class="mb-2">Empowering the Future with AI Innovation</h3>
+                          <p class="fs-sm text-muted border-bottom pb-3 mb-3">Understand customer and staff activities with intelligent insights.</p>
+                          <p class="pb-2 pb-lg-3 mb-3">
+                            At Netra3, we harness the power of cutting-edge AI technology to revolutionize store security and operational efficiency. 
+                            Our solutions are designed to adapt, scale, and evolve, providing you with the most advanced tools to stay ahead in a fast-paced retail world.
+                          </p>
+                          <a href="#" class="btn btn-primary">View case study</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Use cases -->
+      <section class="position-relative overflow-hidden py-5">
+        <span class="position-absolute top-0 start-0 w-100 h-100 d-dark-mode-none" style="background: linear-gradient(141deg, rgba(255, 255, 255, .01) 17.3%, #F3F6FF 78.21%);"></span>
+        <div class="position-absolute top-0 start-0 w-100 h-100 d-none d-dark-mode-block" style="background: linear-gradient(141deg, rgba(11, 15, 25, .01) 17.3%, rgba(255, 255, 255, .04) 78.21%);"></div>
+
+        <div class="container position-relative zindex-2 pt-2 pt-sm-3 pt-md-4 pt-lg-5 mt-xl-3">
+          <h2 class="h1 text-center pb-1 mb-2">Discover what <span class="text-gradient-primary">Netra3</span> can do for you beyond <span class="text-gradient-primary">Monitoring.</span></h2>
+          <p class="fs-lg text-center pb-lg-2">Well, lots of things. Some of them are listed below</p>
+
+
+          <!-- Use case -->
+          <div class="row align-items-center justify-content-center py-4 py-md-5 my-1 my-sm-3 my-md-0 my-xl-3">
+            <div class="col-11 col-sm-9 col-md-7 col-lg-6 offset-lg-1 order-md-2 pb-2 pb-sm-3 pb-md-0 mb-4 mb-md-0">
+              <div class="parallax" style="max-width: 636px;">
+                <div class="parallax-layer" data-depth="0">
+                  <div class="ratio" style="--si-aspect-ratio: 89.6%"></div>
+                </div>
+                <div class="parallax-layer" style="padding-right: 24.2%;" data-depth="0.1">
+                  <img src="assets/img/landing/saas-5/use-cases/data-analysis/line-chart-light.png" class="d-dark-mode-none position-relative rounded-3" style="top: 27.5%; max-width: 482px; box-shadow: 0 12px 48px -8px rgba(189, 196, 221, .35);" alt="Total users line chart">
+                  <img src="assets/img/landing/saas-5/use-cases/data-analysis/line-chart-dark.png" class="d-none d-dark-mode-block position-relative rounded-3" style="top: 27.5%; max-width: 482px; box-shadow: 0px 12px 48px -8px rgba(8, 11, 18, .40);" alt="Total users line chart">
+                </div>
+                <div class="parallax-layer" style="padding-left: 45.75%;" data-depth="-0.12">
+                  <img src="assets/img/landing/saas-5/use-cases/data-analysis/bar-chart-light.png" class="d-dark-mode-none position-relative rounded-3" style="max-width: 345px; box-shadow: 0 10.8px 43.2px -7.2px rgba(189, 196, 221, .35);" alt="Traffic bar chart">
+                  <img src="assets/img/landing/saas-5/use-cases/data-analysis/bar-chart-dark.png" class="d-none d-dark-mode-block position-relative rounded-3" style="max-width: 345px; box-shadow: 0px 12px 48px -8px rgba(8, 11, 18, .40);" alt="Traffic bar chart">
+                </div>
+                <div class="parallax-layer" style="padding-right: 7.547%; padding-left: 44.97%;" data-depth="0.3">
+                  <img src="assets/img/landing/saas-5/use-cases/data-analysis/donut-chart-light.png" class="d-dark-mode-none position-relative rounded-3" style="top: 60.75%; max-width: 302px; box-shadow: 0px 0px 48px -4px rgba(189, 196, 221, .35);" alt="Traffic donut chart">
+                  <img src="assets/img/landing/saas-5/use-cases/data-analysis/donut-chart-dark.png" class="d-none d-dark-mode-block position-relative rounded-3" style="top: 60.75%; max-width: 302px; box-shadow: 0px -15px 48px -8px rgba(8, 11, 18, .40);" alt="Traffic donut chart">
+                </div>
+              </div>
+            </div>
+            <div class="col-md-5 col-xl-4 offset-xl-1 order-md-1 text-center text-md-start">
+              <h3 class="h2 mb-lg-4">Insights That Go Beyond Security</h3>
+              <p class="fs-lg pb-lg-2 mb-4">
+                Netra3 doesn't just stop at monitoring—it empowers you with actionable insights to drive smarter decisions. 
+                Our intuitive dashboard turns complex data into simple, visually appealing graphs, helping you unlock your store's
+                full potential without sifting through hours of footage.
+              </p>
+              <a href="#" class="btn btn-outline-primary rounded-pill">
+                Learn more
+                <i class="bx bx-right-arrow-alt fs-lg ms-2 me-n1"></i>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </section>    
+
+      <!-- Pricing / Comparison -->
+      <section class="position-relative bg-dark pt-lg-4 pt-xl-5" style="background: linear-gradient(90deg, #0b0f19 0%, #172033 51.04%, #0b0f19 100%);
+      ">
+        <div class="jarallax position-absolute top-0 start-0 w-100 h-100" data-jarallax data-speed="0.4">
+          <div class="jarallax-img" style="background-image: url(assets/img/landing/saas-5/pricing-bg-pattern.png);"></div>
+        </div>
+        <div class="container position-relative zindex-2 pt-5" data-bs-theme="dark">
+          <h2 class="h1 text-center pt-2 pt-sm-3 pb-4 pb-md-5 mb-2 mb-md-0 mb-lg-2">Netra3 vs Custom development </h2>
+          <div class="overflow-x-auto pb-4">
+            <div class="position-relative ms-n4 ms-md-0" style="min-width: 800px;">
+
+              <div class="position-absolute top-0 start-50 translate-middle-x h-100 bg-secondary rounded-3 rounded-bottom-0 d-none d-lg-block" style="width: 342px;"></div>
+              <div class="position-absolute top-0 start-50 translate-middle-x h-100 bg-secondary rounded-3 rounded-bottom-0 d-lg-none" style="width: 300px;"></div>
+
+              <!-- Row -->
+              <div class="row row-cols-3 align-items-center position-relative zindex-2 g-0">
+                <div class="col">&nbsp;</div>
+                <div class="col py-2 py-md-3">
+                  <div class="text-center py-4 mx-auto" style="width: 264px;">
+                    <h3 class="h4 mb-sm-4">Netra 3</h3>
+                    <a href="#" class="btn btn-primary bg-gradient-primary w-100 border-0 rounded-pill mb-2">Get started - Free</a>
+                    <p class="text-body fs-xs mb-0">Our pricing starts at as low as $1,299 per team</p>
+                  </div>
+                </div>
+                <div class="col text-center pe-lg-5">
+                  <h3 class="h4 pt-3 pt-md-4 mb-0 mx-auto" style="width: 264px;">Traditional Methods</h3>
+                </div>
+                <div class="position-relative w-100 opacity-50">
+                  <span class="position-absolute top-0 start-0 w-100 h-1" style="background: linear-gradient(270deg, #0f1522 0%, rgba(11, 15, 25, 0) 54.17%, #0f1522 98.44%);"></span>
+                  <span class="d-block w-100 h-1 bg-gradient-primary"></span>
+                </div>
+              </div>
+
+              <!-- Row -->
+              <div class="row row-cols-3 align-items-center position-relative zindex-2 g-0">
+                <div class="col py-3 py-md-4 ps-lg-5">
+                  <div class="text-white opacity-80 fs-lg py-1 px-4 mx-auto" style="width: 208px;">Real-Time Theft Detection</div>
+                </div>
+                <div class="col py-3 py-md-4">
+                  <div class="text-center py-1 px-4 mx-auto" style="width: 264px;">
+                    <div  class="text-white fs-lg fw-semibold">Instant detection</div>
+                    <div class="text-body fs-xs">Alerts through AI algorithms analyzing customer and staff behavior in real time.</div>
+                  </div>
+                </div>
+                <div class="col py-3 py-md-4 pe-lg-5">
+                  <div class="text-center py-1 px-4 mx-auto" style="width: 264px;">
+                    <div  class="text-white fs-lg fw-semibold">Delayed Response</div>
+                    <div class="text-body fs-xs">Relying on human observation or surveillance footage review after theft.</div>
+                  </div>
+                </div>
+                <div class="position-relative w-100 opacity-50">
+                  <span class="position-absolute top-0 start-0 w-100 h-1" style="background: linear-gradient(270deg, #0f1522 0%, rgba(11, 15, 25, 0) 54.17%, #0f1522 98.44%);"></span>
+                  <span class="d-block w-100 h-1 bg-gradient-primary"></span>
+                </div>
+              </div>
+
+              <!-- Row -->
+              <div class="row row-cols-3 align-items-center position-relative zindex-2 g-0">
+                <div class="col py-3 py-md-4 ps-lg-5">
+                  <div class="text-white opacity-80 fs-lg py-1 px-4 mx-auto" style="width: 208px;">Detection Accuracy</div>
+                </div>
+                <div class="col py-3 py-md-4">
+                  <div class="text-center py-1 px-4 mx-auto" style="width: 264px;">
+                    <div  class="text-white fs-lg fw-semibold">High accuracy</div>
+                    <div class="text-body fs-xs">Minimal false positives, trained on large datasets to recognize suspicious behavior.</div>
+                  </div>
+                </div>
+                <div class="col py-3 py-md-4 pe-lg-5">
+                  <div class="text-center py-1 px-4 mx-auto" style="width: 264px;">
+                    <div  class="text-white fs-lg fw-semibold">Often prone to error</div>
+                    <div class="text-body fs-xs">Human error, misinterpretation, and missed incidents.</div>
+                  </div>
+                </div>
+                <div class="position-relative w-100 opacity-50">
+                  <span class="position-absolute top-0 start-0 w-100 h-1" style="background: linear-gradient(270deg, #0f1522 0%, rgba(11, 15, 25, 0) 54.17%, #0f1522 98.44%);"></span>
+                  <span class="d-block w-100 h-1 bg-gradient-primary"></span>
+                </div>
+              </div>
+
+              <!-- Row -->
+              <div class="row row-cols-3 align-items-center position-relative zindex-2 g-0">
+                <div class="col py-3 py-md-4 ps-lg-5">
+                  <div class="text-white opacity-80 fs-lg py-1 px-4 mx-auto" style="width: 208px;">Cost-Effectiveness</div>
+                </div>
+                <div class="col py-4">
+                  <div class="text-center py-1 px-4 mx-auto" style="width: 264px;">
+                    <div class="text-white fs-lg fw-semibold">Fraction of Human Cost</div>
+                    <div class="text-body fs-xs">Over time with minimal human intervention and scalability.</div>
+                  </div>
+                </div>
+                <div class="col py-3 py-md-4 pe-lg-5">
+                  <div class="text-center py-1 px-4 mx-auto" style="width: 264px;">
+                    <div  class="text-white fs-lg fw-semibold">Expensive</div>
+                    <div class="text-body fs-xs">Expensive in terms of staff labor and operational costs.</div>
+                  </div>
+                </div>
+                <div class="position-relative w-100 opacity-50">
+                  <span class="position-absolute top-0 start-0 w-100 h-1" style="background: linear-gradient(270deg, #0f1522 0%, rgba(11, 15, 25, 0) 54.17%, #0f1522 98.44%);"></span>
+                  <span class="d-block w-100 h-1 bg-gradient-primary"></span>
+                </div>
+              </div>
+
+              <!-- Row -->
+              <div class="row row-cols-3 align-items-center position-relative zindex-2 g-0">
+                <div class="col py-3 py-md-4 ps-lg-5">
+                  <div class="text-white opacity-80 fs-lg py-1 px-4 mx-auto" style="width: 208px;">24/7 Monitoring</div>
+                </div>
+                <div class="col py-3 py-md-4">
+                  <div class="text-center py-1 px-4 mx-auto" style="width: 264px;">
+                    <div  class="text-white fs-lg fw-semibold">Always on</div>
+                    <div class="text-body fs-xs">With no downtime, capable of working in low light and diverse conditions.</div>
+                  </div>
+                </div>
+                <div class="col py-3 py-md-4 pe-lg-5">
+                  <div class="text-center py-1 px-4 mx-auto" style="width: 264px;">
+                    <div  class="text-white fs-lg fw-semibold">Limited to store hours</div>
+                    <div class="text-body fs-xs">Often requires additional resources for overnight shifts.</div>
+                  </div>
+                </div>
+                <div class="position-relative w-100 opacity-50">
+                  <span class="position-absolute top-0 start-0 w-100 h-1" style="background: linear-gradient(270deg, #0f1522 0%, rgba(11, 15, 25, 0) 54.17%, #0f1522 98.44%);"></span>
+                  <span class="d-block w-100 h-1 bg-gradient-primary"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="d-none d-xl-block" style="height: 300px;"></div>
+        <div class="d-none d-md-block d-xl-none" style="height: 260px;"></div>
+        <div class="d-md-none" style="height: 230px;"></div>
+        <div class="d-flex position-absolute bottom-0 start-0 w-100 overflow-hidden mb-n1" style="color: var(--si-body-bg);">
+          <div class="position-relative start-50 translate-middle-x flex-shrink-0" style="width: 3774px;">
+            <svg width="3774" height="201" viewBox="0 0 3774 201" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 200.003C0 200.003 1137.52 0.188224 1873.5 0.000134392C2614.84 -0.189325 3774 200.003 3774 200.003H0Z" fill="currentColor"/></svg>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact form -->
+      <section class="position-relative pb-5" style="margin-top: -100px;">
+        <div class="container position-relative zindex-5 py-2 py-md-4 py-lg-5">
+          <div class="row justify-content-center text-center pt-xl-2 pb-4 mb-1 mb-lg-3">
+            <div class="col-xl-6 col-lg-7 col-md-8 col-sm-11">
+              <h2 class="mb-4">Let's Change the Game Together</h2>
+              <p class="text-muted mb-0">Like what you have seen? Let's get started. Just fill in a few details and we will get in touch as soon as possible.</p>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-10">
+              <form class="row needs-validation" novalidate>
+                <div class="col-sm-6 mb-4">
+                  <label for="fn" class="form-label">First name</label>
+                  <input type="text" id="fn" class="form-control" required>
+                  <div class="invalid-feedback">Please, enter your first name!</div>
+                </div>
+                <div class="col-sm-6 mb-4">
+                  <label for="ln" class="form-label">Last name</label>
+                  <input type="text" id="ln" class="form-control" required>
+                  <div class="invalid-feedback">Please, enter your last name!</div>
+                </div>
+                <div class="col-sm-6 mb-4">
+                  <label for="email" class="form-label">Email address</label>
+                  <input type="email" id="email" class="form-control" required>
+                  <div class="invalid-feedback">Please, provide a valid email address!</div>
+                </div>
+                <div class="col-sm-6 mb-4">
+                  <label for="phone" class="form-label">Phone</label>
+                  <input type="text" id="phone" class="form-control" data-format='{"numericOnly": true, "delimiters": ["+1 ", " ", " "], "blocks": [0, 3, 3, 2]}' placeholder="+1 ___ ___ __">
+                </div>
+                <div class="col-sm-6 mb-4">
+                  <label for="city" class="form-label">City</label>
+                  <select id="city" class="form-select" required>
+                    <option value="" disabled selected>Choose city</option>
+                    <option value="Boston">Boston</option>
+                    <option value="Chicago">Chicago</option>
+                    <option value="Los Angeles">Los Angeles</option>
+                    <option value="Miami">Miami</option>
+                    <option value="New York">New York</option>
+                    <option value="Philadelphia">Philadelphia</option>
+                  </select>
+                  <div class="invalid-feedback">Please, choose your city!</div>
+                </div>
+                <div class="col-sm-6 mb-4">
+                  <label for="company" class="form-label">Your company</label>
+                  <input type="text" id="company" class="form-control">
+                </div>
+                <div class="col-12 mb-4">
+                  <label for="message" class="form-label">Message</label>
+                  <textarea id="message" class="form-control" rows="4" required></textarea>
+                  <div class="invalid-feedback">Please, enter your message!</div>
+                </div>
+                <div class="col-12 text-center pt-2 pt-md-3 pt-lg-4">
+                  <button type="submit" class="btn btn-primary shadow-primary btn-lg">Send a request</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- BG shape -->
+        <div class="position-absolute end-0 bottom-0 text-primary">
+          <svg width="469" height="343" viewBox="0 0 469 343" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.08" fill-rule="evenodd" clip-rule="evenodd" d="M273.631 680.872C442.436 768.853 639.315 708.216 717.593 558.212C795.871 408.208 732.941 212.157 564.137 124.176C395.333 36.195 198.453 96.8326 120.175 246.836C41.8972 396.84 104.827 592.891 273.631 680.872ZM236.335 752.344C440.804 858.914 688.289 788.686 789.109 595.486C889.928 402.286 805.903 159.274 601.433 52.7043C396.964 -53.8654 149.479 16.3623 48.6595 209.562C-52.1598 402.762 31.8652 645.774 236.335 752.344Z" fill="currentColor"/><path opacity="0.08" fill-rule="evenodd" clip-rule="evenodd" d="M298.401 633.404C434.98 704.59 598.31 656.971 664.332 530.451C730.355 403.932 675.946 242.827 539.367 171.642C402.787 100.457 239.458 148.076 173.435 274.595C107.413 401.114 161.822 562.219 298.401 633.404ZM288.455 652.464C434.545 728.606 611.369 678.429 683.403 540.391C755.437 402.353 695.402 228.725 549.312 152.583C403.222 76.4404 226.398 126.617 154.365 264.655C82.331 402.693 142.365 576.321 288.455 652.464Z" fill="currentColor"/></svg>
+        </div>
+      </section>      
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="footer bg-dark pt-5 pb-4 pb-lg-5" data-bs-theme="dark">
+      <div class="container pt-lg-4">
+        <div class="row gy-5 pb-5">
+          <div class="col-lg-4">
+            <div class="navbar-brand text-dark p-0 me-0 mb-3 mb-lg-4">
+              <img src="logo.png" width="47" alt="Netra3">
+              Netra3
+            </div>            
+            <div style="max-width: 26rem;">
+              <p class="text-body mb-4 pb-2">
+                Monitor, Analyze, and Act in Real-Time.<br>
+                With cutting-edge technology, Netra3 keeps your store safe, efficient, and customer-focused.
+              </p>
+              <form class="needs-validation" novalidate>
+                <div class="input-group">
+                  <input type="email" id="subscr-email" class="form-control rounded-start ps-5" placeholder="Your email" required>
+                  <i class="bx bx-envelope fs-lg text-muted position-absolute top-50 start-0 translate-middle-y ms-3 zindex-5"></i>
+                  <div class="invalid-tooltip position-absolute top-100 start-0">Please provide a valid email address.</div>
+                  <button type="submit" class="btn btn-primary">Reach Us</button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="col-lg-7 offset-lg-1">
+            <div class="d-flex flex-lg-row flex-column justify-content-lg-between mt-n4 mx-n2">
+              <div class="mt-4 px-2">
+                <h3 class="mb-4 pb-lg-2">Our office</h3>
+                <ul class="nav flex-column mb-0">
+                  <li class="mb-1">
+                    <a href="#" class="nav-link align-items-start fw-normal px-0 py-1">
+                      <i class="bx bx-map fs-5 text-primary me-2"></i>
+                      3517 W. Gray St. Utica, <br> Pennsylvania 57867
+                    </a>
+                  </li>
+                  <li class="mb-1">
+                    <a href="tel:+14782838956" class="nav-link align-items-start fw-normal px-0 py-1">
+                      <i class="bx bx-phone-call fs-5 text-primary me-2"></i>
+                      +1 (478) 283-8956
+                    </a>
+                  </li>
+                  <li>
+                    <a href="mailto:email@example.com" class="nav-link align-items-start fw-normal px-0 py-1">
+                      <i class="bx bx-envelope fs-5 text-primary me-2"></i>
+                      contact@netra3.com
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="mt-4 px-2">
+                <h3 class="mb-4 pb-lg-2">Payments accepted</h3>
+                <div class="mt-n3 ms-n3">
+                  <a href="#" class="mt-3 ms-3 d-inline-block">
+                    <img src="assets/img/landing/product/payments/visa.png" width="96" alt="Visa">
+                  </a>
+                  <a href="#" class="mt-3 ms-3 d-inline-block">
+                    <img src="assets/img/landing/product/payments/mastercard.png" width="96" alt="Visa">
+                  </a>
+                  <a href="#" class="mt-3 ms-3 d-inline-block">
+                    <img src="assets/img/landing/product/payments/paypal.png" width="96" alt="Visa">
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container pt-4">
+        <div class="d-flex flex-sm-row flex-column align-items-center justify-content-between text-center text-md-start pt-4 border-top border-light">
+          <p class="nav d-block fs-sm mb-sm-0 mb-4">
+            <span class="text-light opacity-50">&copy; All rights reserved. Made by </span>
+            <a class="nav-link d-inline-block p-0" href="https://aantariksh.com/" target="_blank" rel="noopener">Aantariksh Developers</a>
+          </p>
+          <div class="mt-n3 ms-n3">
+            <a href="#" class="btn btn-icon btn-secondary btn-facebook rounded-circle mt-3 ms-3" aria-label="Facebook">
+              <i class="bx bxl-facebook"></i>
+            </a>
+            <a href="#" class="btn btn-icon btn-secondary btn-instagram rounded-circle mt-3 ms-3" aria-label="Instagram">
+              <i class="bx bxl-instagram"></i>
+            </a>
+            <a href="#" class="btn btn-icon btn-secondary btn-twitter rounded-circle mt-3 ms-3" aria-label="Twitter">
+              <i class="bx bxl-twitter"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+    <!-- Back to top button -->
+    <a href="#top" class="btn-scroll-top" data-scroll>
+      <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+      <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+    </a>
+
+
+    <!-- Vendor Scripts -->
+    <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/vendor/shufflejs/dist/shuffle.min.js"></script>
+    <script src="assets/vendor/jarallax/dist/jarallax.min.js"></script>
+    <script src="assets/vendor/parallax-js/dist/parallax.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/lightgallery/lightgallery.min.js"></script>
+    <script src="assets/vendor/lightgallery/plugins/video/lg-video.min.js"></script>
+
+    <!-- Main Theme Script -->
+    <script src="assets/js/theme.min.js"></script>
+  </body>
+</html>
