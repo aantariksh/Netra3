@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <title>Netra3</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Netra3">
+    <meta name="keywords" content="bootstrap, business, creative agency, mobile app showcase, saas, fintech, finance, online courses, software, medical, conference landing, services, e-commerce, shopping cart, multipurpose, shop, ui kit, marketing, seo, landing, blog, portfolio, html5, css3, javascript, gallery, slider, touch, creative">
+    <meta name="author" content="Createx Studio">
+
+    <!-- Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Theme switcher (color modes) -->
+    <script src="assets/js/theme-switcher.js"></script>
+
+    <!-- Favicon and Touch Icons -->
+    <link rel="icon" type="image/png"  href="./logo.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Vendor Styles -->
+    <link rel="stylesheet" media="screen" href="assets/vendor/boxicons/css/boxicons.min.css">
+    <link rel="stylesheet" media="screen" href="assets/vendor/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" media="screen" href="assets/vendor/lightgallery/css/lightgallery-bundle.min.css">
+
+    <!-- Main Theme Styles + Bootstrap -->
+    <link rel="stylesheet" media="screen" href="assets/css/theme.min.css">
+
+    <!-- Page loading styles -->
+    <style>
+      .page-loading {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        -webkit-transition: all .4s .2s ease-in-out;
+        transition: all .4s .2s ease-in-out;
+        background-color: #fff;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 9999;
+      }
+      [data-bs-theme="dark"] .page-loading {
+        background-color: #0b0f19;
+      }
+      .page-loading.active {
+        opacity: 1;
+        visibility: visible;
+      }
+      .page-loading-inner {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        -webkit-transition: opacity .2s ease-in-out;
+        transition: opacity .2s ease-in-out;
+        opacity: 0;
+      }
+      .page-loading.active > .page-loading-inner {
+        opacity: 1;
+      }
+      .page-loading-inner > span {
+        display: block;
+        font-size: 1rem;
+        font-weight: normal;
+        color: #9397ad;
+      }
+      [data-bs-theme="dark"] .page-loading-inner > span {
+        color: #fff;
+        opacity: .6;
+      }
+      .page-spinner {
+        display: inline-block;
+        width: 2.75rem;
+        height: 2.75rem;
+        margin-bottom: .75rem;
+        vertical-align: text-bottom;
+        border: .15em solid #b4b7c9;
+        border-right-color: transparent;
+        border-radius: 50%;
+        -webkit-animation: spinner .75s linear infinite;
+        animation: spinner .75s linear infinite;
+      }
+      [data-bs-theme="dark"] .page-spinner {
+        border-color: rgba(255,255,255,.4);
+        border-right-color: transparent;
+      }
+      @-webkit-keyframes spinner {
+        100% {
+          -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+      @keyframes spinner {
+        100% {
+          -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+
+    <!-- Page loading scripts -->
+    <script>
+      (function () {
+        window.onload = function () {
+          const preloader = document.querySelector('.page-loading');
+          preloader.classList.remove('active');
+          setTimeout(function () {
+            preloader.remove();
+          }, 1000);
+        };
+      })();
+    </script>
+  </head>
+
+  <!-- Body -->
+  <body>
+
+    <!-- Page loading spinner -->
+    <div class="page-loading active">
+      <div class="page-loading-inner">
+        <div class="page-spinner"></div><span>Loading...</span>
+      </div>
+    </div>
+
+
+    <!-- Page wrapper for sticky footer -->
+    <!-- Wraps everything except footer to push footer to the bottom of the page if there is little content -->
+    <main class="page-wrapper">
+
+
+      <!-- Navbar -->
+      <!-- Remove "navbar-sticky" class to make navigation bar scrollable with the page -->
+      <header class="header navbar navbar-expand-lg bg-dark navbar-dark position-absolute navbar-sticky">
+        <div class="container px-3">
+          <a href="index.html" class="navbar-brand pe-3">
+            <img src="./logo.png" width="47" alt="Netra 3">
+            NETRA3
+          </a>
+          <div id="navbarNav" class="offcanvas offcanvas-end bg-dark">
+            <div class="offcanvas-header border-bottom border-light">
+              <h5 class="offcanvas-title text-white">Menu</h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a href="about.html" class="nav-link">About Us</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Solutions</a>
+                  <ul class="dropdown-menu dropdown-menu-dark">
+                    <li><a href="solutions.html#anomaly" class="dropdown-item">Anomaly Detection and Behavior Recognition</a></li>
+                    <li><a href="solutions.html#theft" class="dropdown-item">Theft Detection</a></li>
+                    <li><a href="solutions.html#fire" class="dropdown-item">Smoke & Fire Detection</a></li>
+                    <li><a href="solutions.html#weapon" class="dropdown-item">Gun Detection System</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item dropdown">
+                  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Sectors</a>
+                  <ul class="dropdown-menu dropdown-menu-dark">
+                    <li><a href="sectors.html#retail" class="dropdown-item">Retail Stores</a></li>
+                    <li><a href="sectors.html#liquor" class="dropdown-item">Liquor Store</a></li>
+                    <li><a href="sectors.html#gas" class="dropdown-item">Gas Stations</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a href="blogs.html" class="nav-link">Tech Blogs</a>
+                </li>
+              </ul>
+            </div>
+            <div class="offcanvas-header border-top border-light">
+              <a href="contact.html" class="btn btn-primary w-100">
+                <i class="bx bx-cart fs-4 lh-1 me-1"></i>
+                &nbsp;Contact Us
+              </a>
+            </div>      
+          </div>
+          <button type="button" class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <a href="contact.html" class="btn btn-primary bg-gradient-primary border-0 rounded-pill d-none d-lg-inline-flex">
+            <i class="bx bx-phone fs-5 lh-1 me-1"></i>
+            &nbsp;Contact Us
+          </a>
+        </div>
+      </header>
+
+      <section class="position-relative bg-secondary my-5 pt-5">
+        <div class="container position-relative zindex-2 pt-5">
+
+          <div class="row">
+
+            <!-- Contact links -->
+            <div class="col-xl-4 col-lg-5 pb-4 pb-sm-5 mb-2 mb-sm-0">
+              <div class="pe-lg-4 pe-xl-0">
+                <h1 class="pb-3">Reach Us</h1>
+                <p class="mb-lg-5">
+                  We'd love to hear from you! Whether you have a question, feedback, or just want to say hello, feel free to reach out. Fill out the form below or contact us directly using the details provided. We'll get back to you as soon as possible.                  
+                </p>
+                <div class="d-flex align-items-start pb-3 mb-sm-1 mb-md-3">
+                  <div class="bg-light text-primary rounded-circle flex-shrink-0 fs-3 lh-1 p-3">
+                    <i class="bx bx-envelope"></i>
+                  </div>
+                  <div class="ps-3 ps-sm-4">
+                    <h2 class="h4 pb-1 mb-2">Email us</h2>
+                    <p class="mb-2">Please feel free to drop us a line. We will respond as soon as possible.</p>
+                    <div class="btn btn-link btn-lg px-0">
+                      <a href="mailto:contact@netra3.com">contact@netra3.com</a>
+                      <i class="bx bx-right-arrow-alt lead ms-2"></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="d-flex align-items-start">
+                  <div class="bg-light text-primary rounded-circle flex-shrink-0 fs-3 lh-1 p-3">
+                    <i class="bx bx-phone"></i>
+                  </div>
+                  <div class="ps-3 ps-sm-4">
+                    <h2 class="h4 pb-1 mb-2">Call Us</h2>
+                    <p class="mb-2">Our team is always available to hear from you.</p>
+                    <div class="btn btn-link btn-lg px-0">
+                      <a href="tel:+14782838956">+1 (478) 283-8956</a>
+                      <i class="bx bx-right-arrow-alt lead ms-2"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Contact form -->
+            <div class="col-xl-6 col-lg-7 offset-xl-2">
+              <div class="card border-light shadow-lg py-3 p-sm-4 p-md-5">
+                <div class="bg-dark position-absolute top-0 start-0 w-100 h-100 rounded-3 d-none d-dark-mode-block"></div>
+                <div class="card-body position-relative zindex-2">
+                  <h2 class="card-title pb-3 mb-4">Drop a Message</h2>
+                  <form class="row g-4 needs-validation" novalidate>
+                    <div class="col-12">
+                      <label for="fn" class="form-label fs-base">Full name</label>
+                      <input type="text" class="form-control form-control-lg" id="fn" required>
+                      <div class="invalid-feedback">Please enter your full name!</div>
+                    </div>
+                    <div class="col-12">
+                      <label for="email" class="form-label fs-base">Email address</label>
+                      <input type="email" class="form-control form-control-lg" id="email" required>
+                      <div class="invalid-feedback">Please provid a valid email address</div>
+                    </div>
+                    <div class="col-12">
+                      <label for="phone" class="form-label fs-base">Phone</label>
+                      <input type="text" class="form-control form-control-lg" id="phone" required>
+                      <div class="invalid-feedback">Please enter your contact number</div>
+                    </div>
+                    <div class="col-12">
+                      <label for="msg" class="form-label fs-base">Message</label>
+                      <textarea type="text" class="form-control form-control-lg" id="msg" required></textarea>
+                      <div class="invalid-feedback">Please enter your contact number</div>
+                    </div>
+                    <div class="col-12 pt-2 pt-sm-3 text-center">
+                      <button type="submit" class="btn btn-lg btn-primary w-100 w-sm-auto">Send Message</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="position-absolute bottom-0 start-0 w-100 bg-light" style="height: 8rem;"></div>
+      </section>
+
+
+      <!-- FAQ (Accordion) -->
+      <section class="container mb-5">
+        <div class="bg-secondary rounded-3 py-5 px-3 px-sm-4 px-md-0">
+          <h2 class="text-center pt-md-1 pt-lg-3 pt-xl-4 pb-4 mt-xl-1 mb-2">Frequently Asked Questions</h2>
+          <div class="row justify-content-center pb-lg-4 pb-xl-5">
+            <div class="col-xl-8 col-lg-9 col-md-10 pb-md-2">
+              <div class="accordion" id="faq">
+
+                <!-- Item -->
+                <div class="accordion-item border-0 rounded-3 shadow-sm mb-3" data-aos="fade-up">
+                  <h3 class="accordion-header">
+                    <button class="accordion-button shadow-none rounded-3" type="button" data-bs-toggle="collapse" data-bs-target="#q-1" aria-expanded="true" aria-controls="q-1">What is Netra3 and how does it work?</button>
+                  </h3>
+                  <div class="accordion-collapse collapse show" id="q-1" data-bs-parent="#faq">
+                    <div class="accordion-body fs-sm pt-0">
+                      <p>
+                        Netra3 is an AI-powered surveillance system designed to enhance store safety and efficiency. It uses computer vision to detect suspicious activities like theft, violence, or fire in real time. Our technology integrates with existing CCTV infrastructure and adds intelligent monitoring on top. The system alerts staff or security immediately when threats are detected.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+  
+                <!-- Item -->
+                <div class="accordion-item border-0 rounded-3 shadow-sm mb-3" data-aos="fade-up">
+                  <h3 class="accordion-header">
+                    <button class="accordion-button shadow-none rounded-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q-2" aria-expanded="false" aria-controls="q-2">Can Netra3 detect employee theft?</button>
+                  </h3>
+                  <div class="accordion-collapse collapse" id="q-2" data-bs-parent="#faq">
+                    <div class="accordion-body fs-sm pt-0">
+                      <p>Yes, one of Netra3's key capabilities is monitoring internal staff behavior. It can flag unauthorized access, unusual movement patterns, or interactions with high-value inventory. This helps reduce hidden losses and ensures accountability across teams. Our reports offer transparency and actionable insights for managers.</p>
+                    </div>
+                  </div>
+                </div>
+  
+                <!-- Item -->
+                <div class="accordion-item border-0 rounded-3 shadow-sm mb-3" data-aos="fade-up">
+                  <h3 class="accordion-header">
+                    <button class="accordion-button shadow-none rounded-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q-3" aria-expanded="false" aria-controls="q-3">Is Netra3 compatible with my current camera system?</button>
+                  </h3>
+                  <div class="accordion-collapse collapse" id="q-3" data-bs-parent="#faq">
+                    <div class="accordion-body fs-sm pt-0">
+                      <p>Absolutely. Netra3 is designed to be hardware-agnostic and works with most IP and analog camera systems. There's no need to replace your existing infrastructure. Our team helps with seamless integration and system calibration based on your layout and needs.</p>
+                    </div>
+                  </div>
+                </div>
+  
+                <!-- Item -->
+                <div class="accordion-item border-0 rounded-3 shadow-sm mb-3" data-aos="fade-up">
+                  <h3 class="accordion-header">
+                    <button class="accordion-button shadow-none rounded-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q-4" aria-expanded="false" aria-controls="q-4">How secure is the data Netra3 processes?</button>
+                  </h3>
+                  <div class="accordion-collapse collapse" id="q-4" data-bs-parent="#faq">
+                    <div class="accordion-body fs-sm pt-0">
+                      <p>Security is a top priority at Netra3. All video data is encrypted both in transit and at rest. We also follow strict compliance standards including SOC 2 and GDPR, depending on your region. Our systems are regularly tested for vulnerabilities to keep your information safe.</p>
+                    </div>
+                  </div>
+                </div>
+  
+                <!-- Item -->
+                <div class="accordion-item border-0 rounded-3 shadow-sm" data-aos="fade-up">
+                  <h3 class="accordion-header">
+                    <button class="accordion-button shadow-none rounded-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q-5" aria-expanded="false" aria-controls="q-5">Can Netra3 be customized for different industries?</button>
+                  </h3>
+                  <div class="accordion-collapse collapse" id="q-5" data-bs-parent="#faq">
+                    <div class="accordion-body fs-sm pt-0">
+                      <p>Yes, Netra3 is built to adapt across multiple sectors like retail, manufacturing, warehouses, and more. Each deployment is customized with rule sets and detection models tailored to your environment. Whether it's monitoring customer interactions or staff safety, we adjust it to your needs.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="footer bg-dark pt-5 pb-4 pb-lg-5" data-bs-theme="dark">
+      <div class="container pt-lg-4">
+        <div class="row gy-5 pb-5">
+          <div class="col-lg-4">
+            <div class="navbar-brand text-dark p-0 me-0 mb-3 mb-lg-4">
+              <img src="logo.png" width="47" alt="Netra3">
+              Netra3
+            </div>            
+            <div style="max-width: 26rem;">
+              <p class="text-body mb-4 pb-2">
+                Monitor, Analyze, and Act in Real-Time.<br>
+                With cutting-edge technology, Netra3 keeps your store safe, efficient, and customer-focused.
+              </p>
+              <form class="needs-validation" novalidate>
+                <div class="input-group">
+                  <input type="email" id="subscr-email" class="form-control rounded-start ps-5" placeholder="Your email" required>
+                  <i class="bx bx-envelope fs-lg text-muted position-absolute top-50 start-0 translate-middle-y ms-3 zindex-5"></i>
+                  <div class="invalid-tooltip position-absolute top-100 start-0">Please provide a valid email address.</div>
+                  <button type="submit" class="btn btn-primary">Reach Us</button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="col-lg-7 offset-lg-1">
+            <div class="d-flex flex-lg-row flex-column justify-content-lg-between mt-n4 mx-n2">
+              <div class="mt-4 px-2">
+                <h3 class="mb-4 pb-lg-2">Our office</h3>
+                <ul class="nav flex-column mb-0">
+                  <li class="mb-1">
+                    <a href="#" class="nav-link align-items-start fw-normal px-0 py-1">
+                      <i class="bx bx-map fs-5 text-primary me-2"></i>
+                      3517 W. Gray St. Utica, <br> Pennsylvania 57867
+                    </a>
+                  </li>
+                  <li class="mb-1">
+                    <a href="tel:+14782838956" class="nav-link align-items-start fw-normal px-0 py-1">
+                      <i class="bx bx-phone-call fs-5 text-primary me-2"></i>
+                      +1 (478) 283-8956
+                    </a>
+                  </li>
+                  <li>
+                    <a href="mailto:email@example.com" class="nav-link align-items-start fw-normal px-0 py-1">
+                      <i class="bx bx-envelope fs-5 text-primary me-2"></i>
+                      contact@netra3.com
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="mt-4 px-2">
+                <h3 class="mb-4 pb-lg-2">Payments accepted</h3>
+                <div class="mt-n3 ms-n3">
+                  <a href="#" class="mt-3 ms-3 d-inline-block">
+                    <img src="assets/img/landing/product/payments/visa.png" width="96" alt="Visa">
+                  </a>
+                  <a href="#" class="mt-3 ms-3 d-inline-block">
+                    <img src="assets/img/landing/product/payments/mastercard.png" width="96" alt="Visa">
+                  </a>
+                  <a href="#" class="mt-3 ms-3 d-inline-block">
+                    <img src="assets/img/landing/product/payments/paypal.png" width="96" alt="Visa">
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container pt-4">
+        <div class="d-flex flex-sm-row flex-column align-items-center justify-content-between text-center text-md-start pt-4 border-top border-light">
+          <p class="nav d-block fs-sm mb-sm-0 mb-4">
+            <span class="text-light opacity-50">&copy; All rights reserved. Made by </span>
+            <a class="nav-link d-inline-block p-0" href="https://aantariksh.com/" target="_blank" rel="noopener">Aantariksh Developers</a>
+          </p>
+          <div class="mt-n3 ms-n3">
+            <a href="#" class="btn btn-icon btn-secondary btn-facebook rounded-circle mt-3 ms-3" aria-label="Facebook">
+              <i class="bx bxl-facebook"></i>
+            </a>
+            <a href="#" class="btn btn-icon btn-secondary btn-instagram rounded-circle mt-3 ms-3" aria-label="Instagram">
+              <i class="bx bxl-instagram"></i>
+            </a>
+            <a href="#" class="btn btn-icon btn-secondary btn-twitter rounded-circle mt-3 ms-3" aria-label="Twitter">
+              <i class="bx bxl-twitter"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+    <!-- Back to top button -->
+    <a href="#top" class="btn-scroll-top" data-scroll>
+      <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+      <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+    </a>
+
+    
+    <!-- Main Theme Script -->
+    <script src="assets/js/theme.min.js"></script>
+  </body>
+</html>

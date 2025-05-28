@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <title>Netra3</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Netra3">
+    <meta name="keywords" content="bootstrap, business, creative agency, mobile app showcase, saas, fintech, finance, online courses, software, medical, conference landing, services, e-commerce, shopping cart, multipurpose, shop, ui kit, marketing, seo, landing, blog, portfolio, html5, css3, javascript, gallery, slider, touch, creative">
+    <meta name="author" content="Aantariksh Developers">
+
+    <!-- Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Theme switcher (color modes) -->
+    <script src="assets/js/theme-switcher.js"></script>
+
+    <!-- Favicon and Touch Icons -->
+    <link rel="icon" type="image/png"  href="./logo.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Vendor Styles -->
+    <link rel="stylesheet" media="screen" href="assets/vendor/boxicons/css/boxicons.min.css">
+    <link rel="stylesheet" media="screen" href="assets/vendor/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" media="screen" href="assets/vendor/lightgallery/css/lightgallery-bundle.min.css">
+    <link rel="stylesheet" media="screen" href="assets/vendor/img-comparison-slider/dist/styles.css">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
+    <!-- Main Theme Styles + Bootstrap -->
+    <link rel="stylesheet" media="screen" href="assets/css/theme.min.css">
+
+    <!-- Page loading styles -->
+    <style>
+      .page-loading {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        -webkit-transition: all .4s .2s ease-in-out;
+        transition: all .4s .2s ease-in-out;
+        background-color: #fff;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 9999;
+      }
+      [data-bs-theme="dark"] .page-loading {
+        background-color: #0b0f19;
+      }
+      .page-loading.active {
+        opacity: 1;
+        visibility: visible;
+      }
+      .page-loading-inner {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        -webkit-transition: opacity .2s ease-in-out;
+        transition: opacity .2s ease-in-out;
+        opacity: 0;
+      }
+      .page-loading.active > .page-loading-inner {
+        opacity: 1;
+      }
+      .page-loading-inner > span {
+        display: block;
+        font-size: 1rem;
+        font-weight: normal;
+        color: #9397ad;
+      }
+      [data-bs-theme="dark"] .page-loading-inner > span {
+        color: #fff;
+        opacity: .6;
+      }
+      .page-spinner {
+        display: inline-block;
+        width: 2.75rem;
+        height: 2.75rem;
+        margin-bottom: .75rem;
+        vertical-align: text-bottom;
+        border: .15em solid #b4b7c9;
+        border-right-color: transparent;
+        border-radius: 50%;
+        -webkit-animation: spinner .75s linear infinite;
+        animation: spinner .75s linear infinite;
+      }
+      [data-bs-theme="dark"] .page-spinner {
+        border-color: rgba(255,255,255,.4);
+        border-right-color: transparent;
+      }
+      @-webkit-keyframes spinner {
+        100% {
+          -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+      @keyframes spinner {
+        100% {
+          -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+
+    <!-- Page loading scripts -->
+    <script>
+      (function () {
+        window.onload = function () {
+          const preloader = document.querySelector('.page-loading');
+          preloader.classList.remove('active');
+          setTimeout(function () {
+            preloader.remove();
+          }, 1000);
+        };
+      })();
+    </script>
+  </head>
+
+
+  <!-- Body -->
+  <body>
+
+    <!-- Page loading spinner -->
+    <div class="page-loading active">
+      <div class="page-loading-inner">
+        <div class="page-spinner"></div><span>Loading...</span>
+      </div>
+    </div>
+
+
+    <!-- Page wrapper for sticky footer -->
+    <!-- Wraps everything except footer to push footer to the bottom of the page if there is little content -->
+    <main class="page-wrapper">
+
+
+      <!-- Navbar -->
+      <!-- Remove "navbar-sticky" class to make navigation bar scrollable with the page -->
+      <header class="header navbar navbar-expand-lg bg-dark navbar-dark navbar-sticky">
+        <div class="container px-3">
+          <a href="index.html" class="navbar-brand pe-3">
+            <img src="./logo.png" width="47" alt="Netra 3">
+            NETRA3
+          </a>
+          <div id="navbarNav" class="offcanvas offcanvas-end bg-dark">
+            <div class="offcanvas-header border-bottom border-light">
+              <h5 class="offcanvas-title text-white">Menu</h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a href="about.html" class="nav-link">About Us</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Solutions</a>
+                  <ul class="dropdown-menu dropdown-menu-dark">
+                    <li><a href="solutions.html#anomaly" class="dropdown-item">Anomaly Detection and Behavior Recognition</a></li>
+                    <li><a href="solutions.html#theft" class="dropdown-item">Theft Detection</a></li>
+                    <li><a href="solutions.html#fire" class="dropdown-item">Smoke & Fire Detection</a></li>
+                    <li><a href="solutions.html#weapon" class="dropdown-item">Gun Detection System</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item active dropdown">
+                  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Sectors</a>
+                  <ul class="dropdown-menu dropdown-menu-dark">
+                    <li><a href="sectors.html#retail" class="dropdown-item">Retail Stores</a></li>
+                    <li><a href="sectors.html#liquor" class="dropdown-item">Liquor Store</a></li>
+                    <li><a href="sectors.html#gas" class="dropdown-item">Gas Stations</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a href="blogs.html" class="nav-link">Tech Blogs</a>
+                </li>
+              </ul>
+            </div>
+            <div class="offcanvas-header border-top border-light">
+              <a href="contact.html" class="btn btn-primary w-100">
+                <i class="bx bx-cart fs-4 lh-1 me-1"></i>
+                &nbsp;Contact Us
+              </a>
+            </div>      
+          </div>
+          <button type="button" class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <a href="contact.html" class="btn btn-primary bg-gradient-primary border-0 rounded-pill d-none d-lg-inline-flex">
+            <i class="bx bx-phone fs-5 lh-1 me-1"></i>
+            &nbsp;Contact Us
+          </a>
+        </div>
+      </header>
+
+      <!-- Page title -->
+      <section class="container py-5 mt-5 mb-md-2 mb-lg-4 mb-xl-5 d-none" id="anomaly">
+        <div class="row pb-5 mb-md-2 mb-lg-4 mb-xl-5">
+          <div class="col-lg-6">
+            <h1 class="display-2 mb-0">Netra3's Security Solutions</h1>
+          </div>
+          <div class="col-lg-6 col-xl-5 offset-xl-1 pt-3 pt-sm-4 pt-lg-3">
+            <p class="fs-xl pb-4 mb-1 mb-md-2 mb-xl-3">
+              At Netra3, we redefine surveillance with intelligent, real-time monitoring solutions.
+              Our AI-powered platform detects threats, anomalies, and risky behaviors before they escalate.
+              Enhance safety, reduce losses, and gain complete visibility across your store or facility.               
+            </p>
+          </div>
+        </div>
+        <hr>
+      </section>      
+
+      <!-- Page title -->
+      <section class="container py-5 mt-5 mb-md-2 mb-lg-4 mb-xl-5" id="anomaly">
+        <div class="row pb-5 mb-md-2 mb-lg-4 mb-xl-5">
+          <div class="col-lg-6">
+            <h1 class="display-2 mb-0">Industries Netra3 Empower</h1>
+          </div>
+          <div class="col-lg-6 col-xl-5 offset-xl-1 pt-3 pt-sm-4 pt-lg-3">
+            <p class="fs-xl pb-4 mb-1 mb-md-2 mb-xl-3">
+              Netra3 brings cutting-edge surveillance technology tailored to meet the unique challenges of diverse sectors.
+              <br><br>
+              Our AI-driven solutions ensure safety, efficiency, and accountability at every level.
+              Whether it's reducing shrinkage or enhancing operational oversight, we provide unmatched visibility.
+              Explore how we transform your business environment with intelligent monitoring.     
+            </p>
+          </div>
+        </div>
+        <hr>
+      </section>  
+
+
+      <!-- Service -->
+      <section class="container mb-md-3 mb-lg-5 pb-5">
+        <div class="row">
+          <div class="col-md-6 pb-2 pb-md-0 mb-4 mb-md-0">
+            <div class="pe-lg-5">
+              <img src="assets/img/services/service01.jpg" class="rounded-3" alt="Image">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <h2 class="h3 mb-sm-4">Retail Stores</h2>
+            <p class="d-md-none d-xl-block pb-2 pb-md-3 mb-3">
+              Retail environments face daily challenges ranging from theft to inefficient operations. Netra3 enables smart surveillance that not only catches suspicious activity but also tracks customer and staff behavior in real-time. By providing actionable insights, our system helps retailers improve store layout, reduce shrinkage, and enhance the overall customer experience.
+            </p>
+            <ul class="list-unstyled d-md-none d-xl-block pb-2 pb-md-3 mb-3">
+              <li class="d-flex align-items-center mb-2">
+                <i class="bx bx-check lead text-primary me-2"></i>
+                Monitor footfall and dwell time patterns
+              </li>
+              <li class="d-flex align-items-center mb-2">
+                <i class="bx bx-check lead text-primary me-2"></i>
+                Detect employee and customer theft
+              </li>
+              <li class="d-flex align-items-center">
+                <i class="bx bx-check lead text-primary me-2"></i>
+                Optimize staff efficiency and layout design
+              </li>
+            </ul>
+            <div class="border rounded-3 mb-4 mb-lg-5">
+              <div class="row row-cols-1 row-cols-sm-2 g-0">
+                <div class="col d-flex align-items-center border-end-sm border-bottom p-3">
+                  <img src="assets/img/services/icons/digital.svg" width="48" alt="Icon">
+                  <div class="ps-2 ms-1">
+                    <h3 class="h6 mb-0">Digital transformation</h3>
+                    <p class="fs-xs mb-0">Aliquam quis odio senectus.</p>
+                  </div>
+                </div>
+                <div class="col d-flex align-items-center border-bottom p-3">
+                  <img src="assets/img/services/icons/chart.svg" width="48" alt="Icon">
+                  <div class="ps-2 ms-1">
+                    <h3 class="h6 mb-0">Analytics services</h3>
+                    <p class="fs-xs mb-0">Curabitur neque ut morbi sapien.</p>
+                  </div>
+                </div>
+                <div class="col d-flex align-items-center border-end-sm p-3">
+                  <img src="assets/img/services/icons/marketing.svg" width="48" alt="Icon">
+                  <div class="ps-2 ms-1">
+                    <h3 class="h6 mb-0">Marketing &amp; sales</h3>
+                    <p class="fs-xs mb-0">At faucibus molestie egestas sed.</p>
+                  </div>
+                </div>
+                <hr class="d-sm-none">
+                <div class="col d-flex align-items-center p-3">
+                  <img src="assets/img/services/icons/cybersecurity.svg" width="48" alt="Icon">
+                  <div class="ps-2 ms-1">
+                    <h3 class="h6 mb-0">Cybersecurity &amp; strategy</h3>
+                    <p class="fs-xs mb-0">Orci bibendum ullamcorper lorem.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- Service -->
+      <section class="container pt-2 pt-lg-3 mb-md-3 mb-lg-5 pb-5">
+        <div class="row">
+          <div class="col-md-6 order-md-2 pb-2 pb-md-0 mb-4 mb-md-0">
+            <div class="ps-lg-5">
+              <img src="assets/img/services/service02.jpg" class="rounded-3" alt="Image">
+            </div>
+          </div>
+          <div class="col-md-6 ordr-md-1">
+            <h2 class="h3 mb-sm-4">Liquor Stores</h2>
+            <p class="d-md-none d-xl-block pb-2 pb-md-3 mb-3">
+              Liquor stores are high-risk locations prone to theft, fraud, and regulatory scrutiny. Netra3 provides 24/7 intelligent monitoring that identifies risky behavior and detects unusual transactions or movements. Our technology adds an extra layer of protection and ensures staff follow compliance protocols strictly.
+            </p>
+            <ul class="list-unstyled d-md-none d-xl-block pb-2 pb-md-3 mb-3">
+              <li class="d-flex align-items-center mb-2">
+                <i class="bx bx-check lead text-primary me-2"></i>
+                Identify theft and suspicious movements
+              </li>
+              <li class="d-flex align-items-center mb-2">
+                <i class="bx bx-check lead text-primary me-2"></i>
+                Monitor age-restricted areas and compliance behavior
+              </li>
+              <li class="d-flex align-items-center">
+                <i class="bx bx-check lead text-primary me-2"></i>
+                Prevent bottle swapping and tampering
+              </li>
+            </ul>
+            <div class="border rounded-3 mb-4 mb-lg-5">
+              <div class="row row-cols-1 row-cols-sm-2 g-0">
+                <div class="col d-flex align-items-center border-end-sm border-bottom p-3">
+                  <img src="assets/img/services/icons/insurance.svg" width="48" alt="Icon">
+                  <div class="ps-2 ms-1">
+                    <h3 class="h6 mb-0">Insurance</h3>
+                    <p class="fs-xs mb-0">Nunc dui aliquam volutpat augue.</p>
+                  </div>
+                </div>
+                <div class="col d-flex align-items-center border-bottom p-3">
+                  <img src="assets/img/services/icons/banking.svg" width="48" alt="Icon">
+                  <div class="ps-2 ms-1">
+                    <h3 class="h6 mb-0">Banking risk</h3>
+                    <p class="fs-xs mb-0">Habitasse adipiscing aenean sapien.</p>
+                  </div>
+                </div>
+                <div class="col d-flex align-items-center border-end-sm p-3">
+                  <img src="assets/img/services/icons/payments.svg" width="48" alt="Icon">
+                  <div class="ps-2 ms-1">
+                    <h3 class="h6 mb-0">Payments</h3>
+                    <p class="fs-xs mb-0">At faucibus molestie egestas sed.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- Service -->
+      <section class="container pt-2 pt-lg-3 mb-md-3 mb-lg-5 pb-5">
+        <div class="row">
+          <div class="col-md-6 pb-2 pb-md-0 mb-4 mb-md-0">
+            <div class="pe-lg-5">
+              <img src="assets/img/services/service03.jpg" class="rounded-3" alt="Image">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <h2 class="h3 mb-sm-4">Gas Stations</h2>
+            <p class="d-md-none d-xl-block pb-2 pb-md-3 mb-3">
+              Gas stations operate in open, high-traffic areas and are vulnerable to multiple safety threats. Netra3 uses real-time behavior analysis and anomaly detection to monitor transactions, customer interactions, and fuel dispensers. From theft prevention to detecting dangerous situations, we keep your operations secure and compliant.
+            </p>
+            <ul class="list-unstyled d-md-none d-xl-block pb-2 pb-md-3 mb-3">
+              <li class="d-flex align-items-center mb-2">
+                <i class="bx bx-check lead text-primary me-2"></i>
+                Detect fuel theft or drive-offs instantly
+              </li>
+              <li class="d-flex align-items-center mb-2">
+                <i class="bx bx-check lead text-primary me-2"></i>
+                Monitor loitering or unusual activity at pumps
+              </li>
+              <li class="d-flex align-items-center">
+                <i class="bx bx-check lead text-primary me-2"></i>
+                Prevent unauthorized access to restricted zones
+              </li>
+            </ul>            
+            <div class="border rounded-3 mb-4 mb-lg-5">
+              <div class="row row-cols-1 row-cols-sm-2 g-0">
+                <div class="col d-flex align-items-center border-end-sm border-bottom p-3">
+                  <img src="assets/img/services/icons/asset.svg" width="48" alt="Icon">
+                  <div class="ps-2 ms-1">
+                    <h3 class="h6 mb-0">Asset management</h3>
+                    <p class="fs-xs mb-0">Mattis sodales tellus risus placerat in.</p>
+                  </div>
+                </div>
+                <div class="col d-flex align-items-center border-bottom p-3">
+                  <img src="assets/img/services/icons/operations.svg" width="48" alt="Icon">
+                  <div class="ps-2 ms-1">
+                    <h3 class="h6 mb-0">Operations &amp; technology</h3>
+                    <p class="fs-xs mb-0">Viverra volutpat tellus orci enim.</p>
+                  </div>
+                </div>
+                <div class="col d-flex align-items-center border-end-sm p-3">
+                  <img src="assets/img/services/icons/finance.svg" width="48" alt="Icon">
+                  <div class="ps-2 ms-1">
+                    <h3 class="h6 mb-0">Corporate finance</h3>
+                    <p class="fs-xs mb-0">Aliquet amet pharetra fermentum sem.</p>
+                  </div>
+                </div>
+                <hr class="d-sm-none">
+                <div class="col d-flex align-items-center p-3">
+                  <img src="assets/img/services/icons/audit.svg" width="48" alt="Icon">
+                  <div class="ps-2 ms-1">
+                    <h3 class="h6 mb-0">Audit services</h3>
+                    <p class="fs-xs mb-0">Venenatis congue iaculis malesuada.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="footer bg-dark pt-5 pb-4 pb-lg-5" data-bs-theme="dark">
+      <div class="container pt-lg-4">
+        <div class="row gy-5 pb-5">
+          <div class="col-lg-4">
+            <div class="navbar-brand text-dark p-0 me-0 mb-3 mb-lg-4">
+              <img src="logo.png" width="47" alt="Netra3">
+              Netra3
+            </div>            
+            <div style="max-width: 26rem;">
+              <p class="text-body mb-4 pb-2">
+                Monitor, Analyze, and Act in Real-Time.<br>
+                With cutting-edge technology, Netra3 keeps your store safe, efficient, and customer-focused.
+              </p>
+              <form class="needs-validation" novalidate>
+                <div class="input-group">
+                  <input type="email" id="subscr-email" class="form-control rounded-start ps-5" placeholder="Your email" required>
+                  <i class="bx bx-envelope fs-lg text-muted position-absolute top-50 start-0 translate-middle-y ms-3 zindex-5"></i>
+                  <div class="invalid-tooltip position-absolute top-100 start-0">Please provide a valid email address.</div>
+                  <button type="submit" class="btn btn-primary">Reach Us</button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="col-lg-7 offset-lg-1">
+            <div class="d-flex flex-lg-row flex-column justify-content-lg-between mt-n4 mx-n2">
+              <div class="mt-4 px-2">
+                <h3 class="mb-4 pb-lg-2">Our office</h3>
+                <ul class="nav flex-column mb-0">
+                  <li class="mb-1">
+                    <a href="#" class="nav-link align-items-start fw-normal px-0 py-1">
+                      <i class="bx bx-map fs-5 text-primary me-2"></i>
+                      3517 W. Gray St. Utica, <br> Pennsylvania 57867
+                    </a>
+                  </li>
+                  <li class="mb-1">
+                    <a href="tel:+14782838956" class="nav-link align-items-start fw-normal px-0 py-1">
+                      <i class="bx bx-phone-call fs-5 text-primary me-2"></i>
+                      +1 (478) 283-8956
+                    </a>
+                  </li>
+                  <li>
+                    <a href="mailto:email@example.com" class="nav-link align-items-start fw-normal px-0 py-1">
+                      <i class="bx bx-envelope fs-5 text-primary me-2"></i>
+                      contact@netra3.com
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="mt-4 px-2">
+                <h3 class="mb-4 pb-lg-2">Payments accepted</h3>
+                <div class="mt-n3 ms-n3">
+                  <a href="#" class="mt-3 ms-3 d-inline-block">
+                    <img src="assets/img/landing/product/payments/visa.png" width="96" alt="Visa">
+                  </a>
+                  <a href="#" class="mt-3 ms-3 d-inline-block">
+                    <img src="assets/img/landing/product/payments/mastercard.png" width="96" alt="Visa">
+                  </a>
+                  <a href="#" class="mt-3 ms-3 d-inline-block">
+                    <img src="assets/img/landing/product/payments/paypal.png" width="96" alt="Visa">
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container pt-4">
+        <div class="d-flex flex-sm-row flex-column align-items-center justify-content-between text-center text-md-start pt-4 border-top border-light">
+          <p class="nav d-block fs-sm mb-sm-0 mb-4">
+            <span class="text-light opacity-50">&copy; All rights reserved. Made by </span>
+            <a class="nav-link d-inline-block p-0" href="https://aantariksh.com/" target="_blank" rel="noopener">Aantariksh Developers</a>
+          </p>
+          <div class="mt-n3 ms-n3">
+            <a href="#" class="btn btn-icon btn-secondary btn-facebook rounded-circle mt-3 ms-3" aria-label="Facebook">
+              <i class="bx bxl-facebook"></i>
+            </a>
+            <a href="#" class="btn btn-icon btn-secondary btn-instagram rounded-circle mt-3 ms-3" aria-label="Instagram">
+              <i class="bx bxl-instagram"></i>
+            </a>
+            <a href="#" class="btn btn-icon btn-secondary btn-twitter rounded-circle mt-3 ms-3" aria-label="Twitter">
+              <i class="bx bxl-twitter"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+    <!-- Back to top button -->
+    <a href="#top" class="btn-scroll-top" data-scroll>
+      <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+      <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+    </a>
+
+
+    <!-- Vendor Scripts -->
+    <script src="assets/vendor/jarallax/dist/jarallax.min.js"></script>
+    <script src="assets/vendor/rellax/rellax.min.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1500, once: false
+      })
+    </script>    
+
+    <!-- Main Theme Script -->
+    <script src="assets/js/theme.min.js"></script>
+  </body>
+</html>
