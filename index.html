@@ -277,9 +277,6 @@
                     <li><a href="sectors.html#gas" class="dropdown-item">Gas Stations</a></li>
                   </ul>
                 </li>
-                <li class="nav-item">
-                  <a href="blogs.html" class="nav-link">Tech Blogs</a>
-                </li>
               </ul>
             </div>
             <div class="offcanvas-header border-top border-light">
@@ -299,68 +296,121 @@
         </div>
       </header>
 
-      <!-- Hero section with layer parallax gfx -->
-      <section class="position-relative my-5 py-5" style="height: 100vh;">
 
-        <!-- Gradient BG -->
-        <div class="position-absolute top-0 start-0 w-100 h-100 bg-div"></div>
+      <!-- Hero slider + BG parallax -->
+      <section class="jarallax bg-dark py-xxl-5" data-jarallax data-speed="0.4" data-bs-theme="dark" style="margin-top: 75px;">
+        <span class="position-absolute top-0 start-0 w-100 h-100 bg-gradient-dark-translucent"></span>
+        <div class="jarallax-img" style="background-image: url(assets/img/landing/software-agency-1/hero-bg.jpg);"></div>
+        <div class="position-relative text-center zindex-5 overflow-hidden pt-4 py-md-5">
 
-        <!-- Content -->
-        <div class="container position-relative text-light zindex-2 py-lg-4">
-          <div class="row">
-            <div class="col-lg-5 d-flex flex-column pt-lg-4 pt-xl-5">
-              <h1 class="display-3 my-4 text-light">Detect Thefts Instantly 24/7, <br><span id="typed" class="text-gradient-primary"></span></h1>
-              <p class="fs-lg mb-5">Detect thefts, prevent violence, and boost productivity effortlessly. Netra3 brings the power of AI to safeguard your business and optimize operations.</p>
+          <!-- Slider controls (Prev / next) -->
+          <button type="button" id="hero-prev" class="btn btn-prev btn-icon btn-xl bg-transparent shadow-none position-absolute top-50 start-0 translate-middle-y d-none d-md-inline-flex ms-n3 ms-lg-2" aria-label="Previous">
+            <i class="bx bx-chevron-left fs-1"></i>
+          </button>
+          <button type="button" id="hero-next" class="btn btn-next btn-icon btn-xl bg-transparent shadow-none position-absolute top-50 end-0 translate-middle-y d-none d-md-inline-flex me-n3 me-lg-2" aria-label="Next">
+            <i class="bx bx-chevron-right fs-1"></i>
+          </button>
 
-              <ul class="list-unstyled d-md-none d-lg-block pb-1 pb-xl-0 mb-4 mb-xl-5">
-                <li class="d-flex align-items-center mb-2">
-                  <i class="bx bx-check-circle fs-xl text-white me-2"></i>
-                  🛡️ Real-Time Theft Detection Alerts
-                </li>
-                <li class="d-flex align-items-center mb-2">
-                  <i class="bx bx-check-circle fs-xl text-white me-2"></i>
-                  📊 AI-Powered Threat Intelligence Engine
-                </li>
-                <li class="d-flex align-items-center mb-2">
-                  <i class="bx bx-check-circle fs-xl text-white me-2"></i>
-                  🔍 24/7 Surveillance With Analytics
-                </li>
-              </ul>
-              <a href="#" class="btn btn-lg btn-primary w-100 w-sm-auto mb-5">
-                Get Netra3 Security
-                <i class="bx bx-right-arrow-alt lead ms-2 me-n1"></i>
-              </a>              
-            </div>
-            <div class="col-lg-7 my-5">
-              <!-- Parallax gfx -->
-              <div class="parallax mx-auto me-lg-0" style="max-width: 648px;">
-                <div class="parallax-layer" data-depth="0.1">
-                  <img src="assets/img/landing/online-courses/hero/layer01.png" alt="Layer">
-                </div>
-                <div class="parallax-layer" data-depth="0.13">
-                  <img src="assets/img/landing/online-courses/hero/layer02.png" alt="Layer">
-                </div>
-                <div class="parallax-layer zindex-5" data-depth="-0.12">
-                  <img src="assets/img/landing/online-courses/hero/layer03.png" alt="Layer">
-                </div>
-                <div class="parallax-layer zindex-3" data-depth="0.27">
-                  <img src="assets/img/landing/online-courses/hero/layer04.png" alt="Layer">
-                </div>
-                <div class="parallax-layer zindex-1" data-depth="-0.18">
-                  <img src="assets/img/landing/online-courses/hero/layer05.png" alt="Layer">
-                </div>
-                <div class="parallax-layer zindex-1" data-depth="0.1">
-                  <img src="assets/img/landing/online-courses/hero/layer06.png" alt="Layer">
+          <!-- Slider -->
+          <div class="container text-center py-xl-5">
+            <div class="row justify-content-center pt-lg-5">
+              <div class="col-xl-8 col-lg-9 col-md-10 col-11">
+                <div class="swiper pt-5 pb-4 py-md-5" data-swiper-options='{
+                  "effect": "fade",
+                  "speed": 500,
+                  "autoplay": {
+                    "delay": 3500,
+                    "disableOnInteraction": false
+                  },
+                  "pagination": {
+                    "el": ".swiper-pagination",
+                    "clickable": true
+                  },
+                  "navigation": {
+                    "prevEl": "#hero-prev",
+                    "nextEl": "#hero-next"
+                  }
+                }'>
+                  <div class="swiper-wrapper">
+
+                    <!-- Item -->
+                    <div class="swiper-slide">
+                      <h2 class="display-2 from-start mb-lg-4">Detect Thefts Instantly 24/7, Act Swiftly</h2>
+                      <div class="from-end">
+                        <p class="fs-xl text-light opacity-70 pb-2 mb-lg-5">
+                          Detect and prevent theft and aggressive incidents before they escalate. Netra3 ensures constant vigilance and immediate alerts for store protection.
+                        </p>
+                      </div>
+                      <div class="scale-up delay-1">
+                        <a  class="btn btn-primary shadow-primary btn-lg" 
+                          style="scroll-behavior: smooth;" onclick="document.querySelector('#security').scrollIntoView({behavior: 'smooth'}); return false;">
+                          Get Netra3 Security
+                        </a>
+                      </div>
+
+                    </div>
+
+                    <!-- Item -->
+                    <div class="swiper-slide">
+                      <h2 class="display-2 from-start mb-lg-4">AI-Powered Monitoring, Smart Operations</h2>
+                      <div class="from-end">
+                        <p class="fs-xl text-light opacity-70 pb-2 mb-lg-5">
+                          Netra3 uses AI to monitor employee behavior, customer traffic, and store operations in real-time. This data helps optimize operations and enhance productivity.
+                        </p>
+                      </div>
+                      <div class="scale-up delay-1">
+                        <a  class="btn btn-primary shadow-primary btn-lg" 
+                          style="scroll-behavior: smooth;" onclick="document.querySelector('#security').scrollIntoView({behavior: 'smooth'}); return false;">
+                          Get Netra3 Monitoring
+                        </a>
+                      </div>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="swiper-slide">
+                      <h2 class="display-2 from-start mb-lg-4">Stay Informed with Critical Alerts</h2>
+                      <div class="from-end">
+                        <p class="fs-xl text-light opacity-70 pb-2 mb-lg-5">
+                          Netra3 alerts you to fire and weapon risks in real-time. Proactive approach helps prevent irreversible disasters and keeps your business safe.
+                        </p>
+                      </div>
+                      <div class="scale-up delay-1">
+                        <a  class="btn btn-primary shadow-primary btn-lg" 
+                          style="scroll-behavior: smooth;" onclick="document.querySelector('#security').scrollIntoView({behavior: 'smooth'}); return false;">
+                          Get Netra3 Benefits
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Pagination (bullets) -->
+                  <div class="swiper-pagination position-relative d-md-none pt-2 mt-5"></div>
                 </div>
               </div>
             </div>
           </div>
         </div>
+        <div class="container d-flex flex-column flex-sm-row align-items-center justify-content-between position-relative zindex-5 pb-5">
+          <div class="d-flex mb-4 mb-sm-0">
+            <a href="#" class="btn btn-icon btn-secondary btn-linkedin rounded-circle me-2" aria-label="LinkedIn">
+              <i class="bx bxl-linkedin"></i>
+            </a>
+            <a href="#" class="btn btn-icon btn-secondary btn-facebook rounded-circle me-2" aria-label="Facebook">
+              <i class="bx bxl-facebook"></i>
+            </a>
+            <a href="#" class="btn btn-icon btn-secondary btn-twitter rounded-circle me-2" aria-label="Twitter">
+              <i class="bx bxl-twitter"></i>
+            </a>
+            <a href="#" class="btn btn-icon btn-secondary btn-youtube rounded-circle me-2" aria-label="YouTube">
+              <i class="bx bxl-youtube"></i>
+            </a>
+          </div>
+        </div>
       </section>
 
       <!-- Benefits -->
-      <section class="container mb-5 pt-md-2 pt-lg-4 pt-xl-5">
-        <h2 class="h1 my-4 pt-2 text-center" data-aos="fade-down">Your AI-Driven Guardian for Ultimate Security</h2>
+      <section class="container mb-5 pt-md-2 pt-lg-4 pt-xl-5" id="security">
+        <h2 class="h1 my-4 pt-2 text-center">Your AI-Driven Guardian for Ultimate Security</h2>
         <div class="row pb-4">
           <div class="col-md-3 col-6 order-md-1 order-2">
             <div class="d-flex flex-column justify-content-between h-100 text-center">
@@ -972,8 +1022,9 @@
       <div class="container pt-4">
         <div class="d-flex flex-sm-row flex-column align-items-center justify-content-between text-center text-md-start pt-4 border-top border-light">
           <p class="nav d-block fs-sm mb-sm-0 mb-4">
-            <span class="text-light opacity-50">&copy; All rights reserved. Made by </span>
-            <a class="nav-link d-inline-block p-0" href="https://aantariksh.com/" target="_blank" rel="noopener">Aantariksh Developers</a>
+            <span class="text-light opacity-50">&copy; All rights reserved.</span>
+            <!-- <span class="text-light opacity-50">&copy; All rights reserved. Made by </span> -->
+            <!-- <a class="nav-link d-inline-block p-0" href="https://aantariksh.com/" target="_blank" rel="noopener">Aantariksh Developers</a> -->
           </p>
           <div class="mt-n3 ms-n3">
             <a href="#" class="btn btn-icon btn-secondary btn-facebook rounded-circle mt-3 ms-3" aria-label="Facebook">
