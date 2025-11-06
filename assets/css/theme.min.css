@@ -1,6 +1,6 @@
 @import"https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap";
 
-.text-gradient-primary {
+.text-gradient-primary, .tgp {
     background: linear-gradient(to right, #0754a1, #00C9FF, #48d0f6);
     /* background: linear-gradient(to right, #0754a1, #00C9FF, #48d0f6); */
     -webkit-background-clip: text;
