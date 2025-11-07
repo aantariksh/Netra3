@@ -281,10 +281,23 @@
             </div>
             <div class="offcanvas-header border-top border-light">
               <a href="contact.html" class="btn btn-primary w-100">
-                <i class="bx bx-cart fs-4 lh-1 me-1"></i>
+                <i class="bx bx-phone fs-4 lh-1 me-1"></i>
                 &nbsp;Contact Us
               </a>
             </div>      
+          </div>
+          <div class="pe-lg-1 ms-auto me-4">
+            <div class="d-flex mb-4 mb-sm-0">
+              <a href="#" class="btn btn-icon btn-sm btn-secondary btn-linkedin rounded-circle me-2" aria-label="LinkedIn">
+                <i class="bx bxl-linkedin"></i>
+              </a>
+              <a href="#" class="btn btn-icon btn-sm btn-secondary btn-facebook rounded-circle me-2" aria-label="Facebook">
+                <i class="bx bxl-facebook"></i>
+              </a>
+              <a href="#" class="btn btn-icon btn-sm btn-secondary btn-twitter rounded-circle me-2" aria-label="Twitter">
+                <i class="bx bxl-twitter"></i>
+              </a>
+            </div>
           </div>
           <button type="button" class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -302,20 +315,11 @@
         <span class="position-absolute top-0 start-0 w-100 h-100 bg-gradient-dark-translucent"></span>
         <div class="jarallax-img" style="background-image: url(assets/img/landing/software-agency-1/hero-bg.jpg);"></div>
         <div class="position-relative text-center zindex-5 overflow-hidden pt-4 py-md-5">
-
-          <!-- Slider controls (Prev / next) -->
-          <button type="button" id="hero-prev" class="btn btn-prev btn-icon btn-xl bg-transparent shadow-none position-absolute top-50 start-0 translate-middle-y d-none d-md-inline-flex ms-n3 ms-lg-2" aria-label="Previous">
-            <i class="bx bx-chevron-left fs-1"></i>
-          </button>
-          <button type="button" id="hero-next" class="btn btn-next btn-icon btn-xl bg-transparent shadow-none position-absolute top-50 end-0 translate-middle-y d-none d-md-inline-flex me-n3 me-lg-2" aria-label="Next">
-            <i class="bx bx-chevron-right fs-1"></i>
-          </button>
-
-          <!-- Slider -->
-          <div class="container text-center py-xl-5">
-            <div class="row justify-content-center pt-lg-5">
-              <div class="col-xl-8 col-lg-9 col-md-10 col-11">
-                <div class="swiper pt-5 pb-4 py-md-5" data-swiper-options='{
+          <!-- Slider at the very bottom of viewport -->
+          <div class="container text-center py-xl-5 d-flex flex-column justify-content-end" style="height: 75vh;">
+            <div class="row justify-content-center" style="height: auto;">
+              <div class="col-xl-8 col-lg-9 col-md-10 col-11" style="height: auto;">
+                <div class="swiper" style="padding-top:0;" data-swiper-options='{
                   "effect": "fade",
                   "speed": 500,
                   "autoplay": {
@@ -390,22 +394,6 @@
             </div>
           </div>
         </div>
-        <div class="container d-flex flex-column flex-sm-row align-items-center justify-content-between position-relative zindex-5 pb-5">
-          <div class="d-flex mb-4 mb-sm-0">
-            <a href="#" class="btn btn-icon btn-secondary btn-linkedin rounded-circle me-2" aria-label="LinkedIn">
-              <i class="bx bxl-linkedin"></i>
-            </a>
-            <a href="#" class="btn btn-icon btn-secondary btn-facebook rounded-circle me-2" aria-label="Facebook">
-              <i class="bx bxl-facebook"></i>
-            </a>
-            <a href="#" class="btn btn-icon btn-secondary btn-twitter rounded-circle me-2" aria-label="Twitter">
-              <i class="bx bxl-twitter"></i>
-            </a>
-            <a href="#" class="btn btn-icon btn-secondary btn-youtube rounded-circle me-2" aria-label="YouTube">
-              <i class="bx bxl-youtube"></i>
-            </a>
-          </div>
-        </div>
       </section>
 
       <!-- Benefits -->
@@ -463,7 +451,7 @@
 
               <!-- Image -->
               <div class="mx-md-n5 mb-md-n5 text-center">
-                <img src="logo.png" alt="Image" style="max-width: 400px;">
+                <img src="logo.png" alt="Image" class="w-100" style="max-width: 400px;">
               </div>
 
               <!-- Items row -->

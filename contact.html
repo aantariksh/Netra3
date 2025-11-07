@@ -178,11 +178,24 @@
             </div>
             <div class="offcanvas-header border-top border-light">
               <a href="contact.html" class="btn btn-primary w-100">
-                <i class="bx bx-cart fs-4 lh-1 me-1"></i>
+                <i class="bx bx-phone fs-4 lh-1 me-1"></i>
                 &nbsp;Contact Us
               </a>
             </div>      
           </div>
+          <div class="pe-lg-1 ms-auto me-4">
+            <div class="d-flex mb-4 mb-sm-0">
+              <a href="#" class="btn btn-icon btn-sm btn-secondary btn-linkedin rounded-circle me-2" aria-label="LinkedIn">
+                <i class="bx bxl-linkedin"></i>
+              </a>
+              <a href="#" class="btn btn-icon btn-sm btn-secondary btn-facebook rounded-circle me-2" aria-label="Facebook">
+                <i class="bx bxl-facebook"></i>
+              </a>
+              <a href="#" class="btn btn-icon btn-sm btn-secondary btn-twitter rounded-circle me-2" aria-label="Twitter">
+                <i class="bx bxl-twitter"></i>
+              </a>
+            </div>
+          </div>          
           <button type="button" class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -240,26 +253,26 @@
                 <div class="bg-dark position-absolute top-0 start-0 w-100 h-100 rounded-3 d-none d-dark-mode-block"></div>
                 <div class="card-body position-relative zindex-2">
                   <h2 class="card-title pb-3 mb-4">Drop a Message</h2>
-                  <form class="row g-4 needs-validation" novalidate>
+                  <form id="contactForm" class="row g-4 needs-validation" novalidate>
                     <div class="col-12">
                       <label for="fn" class="form-label fs-base">Full name</label>
-                      <input type="text" class="form-control form-control-lg" id="fn" required>
+                      <input type="text" name="name" class="form-control form-control-lg" id="fn" required>
                       <div class="invalid-feedback">Please enter your full name!</div>
                     </div>
                     <div class="col-12">
                       <label for="email" class="form-label fs-base">Email address</label>
-                      <input type="email" class="form-control form-control-lg" id="email" required>
-                      <div class="invalid-feedback">Please provid a valid email address</div>
+                      <input type="email" name="email" class="form-control form-control-lg" id="email" required>
+                      <div class="invalid-feedback">Please provide a valid email address</div>
                     </div>
                     <div class="col-12">
                       <label for="phone" class="form-label fs-base">Phone</label>
-                      <input type="text" class="form-control form-control-lg" id="phone" required>
+                      <input type="tel" name="phone" class="form-control form-control-lg" id="phone" required>
                       <div class="invalid-feedback">Please enter your contact number</div>
                     </div>
                     <div class="col-12">
                       <label for="msg" class="form-label fs-base">Message</label>
-                      <textarea type="text" class="form-control form-control-lg" id="msg" required></textarea>
-                      <div class="invalid-feedback">Please enter your contact number</div>
+                      <textarea name="message" class="form-control form-control-lg" id="msg" rows="4" required></textarea>
+                      <div class="invalid-feedback">Please enter your message</div>
                     </div>
                     <div class="col-12 pt-2 pt-sm-3 text-center">
                       <button type="submit" class="btn btn-lg btn-primary w-100 w-sm-auto">Send Message</button>
@@ -449,5 +462,8 @@
     
     <!-- Main Theme Script -->
     <script src="assets/js/theme.min.js"></script>
+
+    <!-- Contact Form Handler -->
+    <script src="assets/js/contact-form.js"></script>
   </body>
 </html>
