@@ -9925,6 +9925,21 @@ fieldset:disabled .btn {
     background: linear-gradient(90deg, #0754a1 0%, #28b4db 50%, #00C9FF 100%) !important
 }
 
+.bg-gradient-og {
+    background: linear-gradient(
+        140deg,
+        rgba(7, 84, 161, 0.75) 5%,
+        rgba(0, 201, 255, 0.95) 40%,
+        rgba(72, 208, 246, 0.85) 80%
+    ) !important;
+    box-shadow: 10px 16px 40px 0 rgba(33,49,135,0.30), 5px 8px 20px rgba(0,0,0,0.18); border-radius: 18px;
+    color: #1a1a1a;
+}
+
+.bg-gradient-og img {
+    filter: brightness(0) saturate(100%) invert(7%) sepia(2%) saturate(400%) hue-rotate(180deg) brightness(90%) contrast(90%);
+}
+
 .bg-gradient-primary-translucent {
     background: linear-gradient(180deg, rgba(99, 102, 241, 0) 0%, rgba(99, 102, 241, 0.6) 120%) !important
 }
