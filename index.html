@@ -116,7 +116,7 @@
         position: relative;
         margin: 50px auto; /* Center horizontally */
         border: 4px solid #00C9FF; /* Optional: Add a border */
-        border-radius: 8%; /* Rounded corners */
+        border-radius: 4%; /* Rounded corners */
       }
 
       .video-container video {
@@ -176,7 +176,7 @@
       }
 
       .card-red {
-        /* border: 2px solid #dc3545; */
+        border: 1.5px solid;
         transition: background-color 0.3s ease;
       }
       .card-red:hover {
@@ -184,7 +184,7 @@
       }
 
       .card-green {
-        /* border: 2px solid #28a745; */
+        border: 1.5px solid;
         transition: background-color 0.3s ease;
       }
       .card-green:hover {
@@ -192,7 +192,7 @@
       }
 
       .card-yellow {
-        /* border: 2px solid #ffc107; */
+        border: 1.5px solid;
         transition: background-color 0.3s ease;
       }
       .card-yellow:hover {
@@ -200,11 +200,18 @@
       }
 
       .card-blue {
-        /* border: 2px solid #007bff; */
+        border: 1.5px solid;
         transition: background-color 0.3s ease;
       }
       .card-blue:hover {
         background-color: #cce5ff !important;
+      }
+
+      .bottom-rounded {
+        border-top-left-radius: 5%; 
+        border-top-right-radius: 5%; 
+        border-bottom-left-radius: 10%; 
+        border-bottom-right-radius: 10%;
       }
     </style>
 
@@ -569,10 +576,8 @@
 
             <!-- Item -->
             <div class="col position-relative d-flex" data-aos="fade-up">
-              <div class="card card-red bg-transparent rounded-5 p-md-1 p-xl-3 mx-2 d-flex flex-column h-100">
-                <div class="d-table bg-secondary rounded-3 p-3 mx-auto mt-3 mt-md-4">
-                  <img src="assets/img/landing/saas-2/features/security.svg" width="40" alt="Security">
-                </div>
+              <div class="card card-red bg-transparent rounded-5 mx-2 d-flex flex-column h-100">
+                <img src="./assets/img/solutions/02.jpg" class="card-img-top bottom-rounded">
                 <div class="card-body text-center flex-grow-1 d-flex flex-column">
                   <h3 class="h5 pb-1 mb-2">Employee Theft Detection</h3>
                   <p class="mb-0 mt-auto">
@@ -585,10 +590,8 @@
 
             <!-- Item -->
             <div class="col position-relative d-flex" data-aos="fade-up" data-aos-delay="200">
-              <div class="card card-green bg-transparent rounded-5 p-md-1 p-xl-3 mx-2 d-flex flex-column h-100">
-                <div class="d-table bg-secondary rounded-3 p-3 mx-auto mt-3 mt-md-4">
-                  <img src="assets/img/landing/saas-2/features/notifications.svg" width="40" alt="Notifications">
-                </div>
+              <div class="card card-green bg-transparent rounded-5 mx-2 d-flex flex-column h-100">
+                <img src="./assets/img/home/agressive.jpg" class="card-img-top bottom-rounded">
                 <div class="card-body text-center flex-grow-1 d-flex flex-column">
                   <h3 class="h5 pb-1 mb-2">Aggresive Behavior</h3>
                   <p class="mb-0 mt-auto">
@@ -601,10 +604,8 @@
             
             <!-- Item -->
             <div class="col position-relative d-flex" data-aos="fade-up" data-aos-delay="400">
-              <div class="card card-yellow bg-transparent rounded-5 p-md-1 p-xl-3 mx-2 d-flex flex-column h-100">
-                <div class="d-table bg-secondary rounded-3 p-3 mx-auto mt-3 mt-md-4">
-                  <img src="assets/img/landing/saas-2/features/tasks.svg" width="40" alt="Tasks">
-                </div>
+              <div class="card card-yellow bg-transparent rounded-5 mx-2 d-flex flex-column h-100">
+                <img src="./assets/img/home/shoplifting.jpg" class="card-img-top bottom-rounded">
                 <div class="card-body text-center flex-grow-1 d-flex flex-column">
                   <h3 class="h5 pb-1 mb-2">Shoplifting Prevention</h3>
                   <p class="mb-0 mt-auto">
@@ -617,10 +618,8 @@
 
             <!-- Item -->
             <div class="col position-relative d-flex" data-aos="fade-up" data-aos-delay="600">
-              <div class="card card-blue bg-transparent rounded-5 p-md-1 p-xl-3 mx-2 d-flex flex-column h-100">
-                <div class="d-table bg-secondary rounded-3 p-3 mx-auto mt-3 mt-md-4">
-                  <img src="assets/img/landing/saas-2/features/analytics.svg" width="40" alt="Analytics">
-                </div>
+              <div class="card card-blue bg-transparent rounded-5 mx-2 d-flex flex-column h-100">
+                <img src="./assets/img/solutions/04.jpg" class="card-img-top bottom-rounded">
                 <div class="card-body text-center flex-grow-1 d-flex flex-column">
                   <h3 class="h5 pb-1 mb-2">Weapon Detection</h3>
                   <p class="mb-0 mt-auto">
@@ -651,7 +650,7 @@
             </div>
             <div class="col-md-7 offset-xl-1">
               <div class="position-relative video-container">
-                <video autoplay="" loop="" muted="" src="./assets/img/video/video.mp4" playsinline=""></video>
+                <video autoplay="" loop="" muted="" src="./assets/img/home/video.mp4" playsinline=""></video>
               </div>
             </div>
           </div>
@@ -662,7 +661,7 @@
           <div class="steps steps-sm steps-horizontal-md steps-center pb-5 mb-md-2 mb-lg-3">
             <div class="step" data-aos="fade-up">
               <div class="step-number">
-                <div class="step-number-inner">1</div>
+                <div class="step-number-inner blue-border">1</div>
               </div>
               <div class="step-body">
                 <h3 class="h4 mb-3">Assessment</h3>
@@ -673,7 +672,7 @@
             </div>
             <div class="step" data-aos="fade-up" data-aos-delay="200">
               <div class="step-number">
-                <div class="step-number-inner">2</div>
+                <div class="step-number-inner blue-border">2</div>
               </div>
               <div class="step-body">
                 <h3 class="h4 mb-3">Installation</h3>
@@ -684,7 +683,7 @@
             </div>
             <div class="step" data-aos="fade-up" data-aos-delay="400">
               <div class="step-number">
-                <div class="step-number-inner">3</div>
+                <div class="step-number-inner blue-border">3</div>
               </div>
               <div class="step-body">
                 <h3 class="h4 mb-3">Configuration</h3>
@@ -695,7 +694,7 @@
             </div>
             <div class="step" data-aos="fade-up" data-aos-delay="600">
               <div class="step-number">
-                <div class="step-number-inner">4</div>
+                <div class="step-number-inner blue-border">4</div>
               </div>
               <div class="step-body">
                 <h3 class="h4 mb-3">Monitoring</h3>
