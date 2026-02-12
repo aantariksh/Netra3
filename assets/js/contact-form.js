@@ -13,7 +13,7 @@
       return;
     }
 
-    const submitButton = contactForm.querySelector('button[type="submit"]');
+    const submitButton = document.getElementById('contactFormSubmit');
     const originalButtonText = submitButton.innerHTML;
 
     contactForm.addEventListener('submit', async function(e) {

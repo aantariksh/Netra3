@@ -940,28 +940,28 @@
           </div>
           <div class="row justify-content-center">
             <div class="col-lg-8 col-md-10">
-              <form class="row needs-validation" novalidate>
+              <form id="contactForm" class="row needs-validation" novalidate>
                 <div class="col-sm-12 mb-4">
                   <label for="fn" class="form-label">Full name</label>
-                  <input type="text" id="fn" class="form-control" required>
+                  <input type="text" id="fn" name="name" class="form-control" required>
                   <div class="invalid-feedback">Please, enter your full name!</div>
                 </div>
                 <div class="col-sm-6 mb-4">
                   <label for="email" class="form-label">Email address</label>
-                  <input type="email" id="email" class="form-control" required>
+                  <input type="email" id="email" name="email" class="form-control" required>
                   <div class="invalid-feedback">Please, provide a valid email address!</div>
                 </div>
                 <div class="col-sm-6 mb-4">
                   <label for="phone" class="form-label">Phone</label>
-                  <input type="text" id="phone" class="form-control" data-format='{"numericOnly": true, "delimiters": ["+1 ", " ", " "], "blocks": [0, 3, 3, 2]}' placeholder="+1 ___ ___ __">
+                  <input type="text" id="phone" name="phone" class="form-control" data-format='{"numericOnly": true, "delimiters": ["+1 ", " ", " "], "blocks": [0, 3, 3, 2]}' placeholder="+1 ___ ___ __">
                 </div>
                 <div class="col-12 mb-4">
                   <label for="message" class="form-label">Message</label>
-                  <textarea id="message" class="form-control" rows="4" required></textarea>
+                  <textarea id="message" name="message" class="form-control" rows="4" required></textarea>
                   <div class="invalid-feedback">Please, enter your message!</div>
                 </div>
                 <div class="col-12 text-center pt-2 pt-md-3 pt-lg-4">
-                  <button type="submit" class="btn btn-primary shadow-primary btn-lg">Send a request</button>
+                  <button type="submit" class="btn btn-primary shadow-primary btn-lg" id="contactFormSubmit">Send a request</button>
                 </div>
               </form>
             </div>
@@ -985,7 +985,7 @@
                 Monitor, Analyze, and Act in Real-Time.<br>
                 With cutting-edge technology, Netra3 keeps your store safe, efficient, and customer-focused.
               </p>
-              <form class="needs-validation" novalidate>
+              <form class="needs-validation d-none" novalidate>
                 <div class="input-group">
                   <input type="email" id="subscr-email" class="form-control rounded-start ps-5" placeholder="Your email" required>
                   <i class="bx bx-envelope fs-lg text-muted position-absolute top-50 start-0 translate-middle-y ms-3 zindex-5"></i>
@@ -1094,5 +1094,6 @@
 
     <!-- Main Theme Script -->
     <script src="assets/js/theme.min.js"></script>
+    <script src="assets/js/contact-form.js"></script>
   </body>
 </html>
